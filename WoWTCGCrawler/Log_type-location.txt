@@ -1,0 +1,262 @@
+    <table width="900">
+    <!--
+        <tr><td align="center"><img src="http://www.wowtcgdb.com/images/banner900.jpg" alt="WoWTCGdb"/></td></tr>
+        <tr><td align="center"><a href="default.aspx" class="navbar">Home</a> | <a href="cards.aspx" class="navbar">Cards</a> | <a href="decks.aspx" class="navbar">Decks</a> | <a href="strategy.aspx" class="navbar">Strategy</a> | <a href="loot.aspx" class="navbar">Loot</a> |  <a href="links.aspx" class="navbar">Links</a> | <a href="creator.aspx" class="navbar">Creator</a></td></tr>
+        <tr><td><hr size="1"/></td></tr>
+        -->
+        <tr><td>
+<img src="images/banner3.jpg" width="900" height="30" border="0" usemap="#Map"> 
+<map name="Map">
+  <area shape="rect" coords="0,0,419,24" href="http://www.wowtcgdb.com" alt="WoWTCGdb">
+  <area shape="rect" coords="420,0,474,23" href="cards.aspx" alt="Cards">
+  <area shape="rect" coords="478,0,545,22" href="set-promos.aspx" alt="Promos">
+  <area shape="rect" coords="550,0,594,23" href="loot.aspx" alt="Loot">
+  <area shape="rect" coords="599,0,653,23" href="decks.aspx" alt="Decks">
+  <area shape="rect" coords="656,0,707,23" href="rules.aspx" alt="Rules">
+  <area shape="rect" coords="711,0,762,23" href="links.aspx" alt="Links">
+  <area shape="rect" coords="766,0,833,23" href="creator.aspx" alt="Creator">
+</map>
+        </td></tr>
+        <tr><td align="center">
+            <p><a href="type-all.aspx" class="navbar">Show All</a> | <a href="type-hero.aspx" class="navbar">Hero</a> 
+            | <a href="type-ally.aspx" class="navbar">Ally</a> | <a href="type-quest.aspx" class="navbar">Quest</a> 
+            | <a href="type-ability.aspx" class="navbar">Ability</a> | <a href="type-weapon.aspx" class="navbar">Weapon</a> 
+            | <a href="type-armor.aspx" class="navbar">Armor</a> | <a href="type-armorset.aspx" class="navbar">Armor Set</a> | <a href="type-item.aspx" class="navbar">Item</a>  | <a href="type-location.aspx" class="navbar">Location</a> | <a href="type-masterhero.aspx" class="navbar">Master Hero</a> 
+          </p>
+        </td></tr>
+    </table>
+    
+        
+
+        <div>
+	<table cellspacing="0" cellpadding="4" rules="cols" bordercolor="#DEDFDE" border="1" id="ctl00_body_GridView1" bgcolor="White" width="900">
+		<tr bgcolor="#6B696B">
+			<th scope="col"><font color="White"><b>&nbsp;</b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$name')"><font color="White">Name</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$rules')"><font color="White">Rules</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$number')"><font color="White">#</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$raritysort')"><font color="White">Rarity</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$setname')"><font color="White">Set</font></a></b></font></th>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/abyssal_maw.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=4138">Abyssal Maw</a></font></td><td><font color="Black">On your turn, if a hero or ally you controlled dealt frost ([Frost]) damage this turn: 2, [Exhaust] -> Put a 2 [Frost] / 1 [Health] Water Elemental ally token into play.<br>When a Water Elemental enters play under your control, your hero may heal 2 damage from itself.</font></td><td><font color="Black">217</font></td><td><font color="Black">R</font></td><td><font color="Black">WOE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/alterac_valley.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2620">Alterac Valley</a></font></td><td><font color="Black">When you play a card, add an honor counter.<br>On your turn: <img src="images/icon-exhaust.gif">, Remove eight honor counters <img src="images/icon-arrow.gif"/> Put target ally card from your graveyard into play if its cost is less than or equal to the number of resources you control.</font></td><td><font color="Black">202</font></td><td><font color="Black">C</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/angrathar_the_wrathgate.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3382">Angrathar the Wrathgate</a></font></td><td><font color="Black">When a card enters an opposing graveyard from anywhere, add a rattle counter.<br>On your turn: 2, <img src="images/icon-exhaust.gif">, Remove three rattle counters <img src="images/icon-arrow.gif"> Put a 3 [Melee] / 3 [Health] Scourge ally token into play.</font></td><td><font color="Black">220</font></td><td><font color="Black">E</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/arathi_basin.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2619">Arathi Basin</a></font></td><td><font color="Black">When you play a card, add an honor counter.<br><img src="images/icon-exhaust.gif">, Remove five honor counters <img src="images/icon-arrow.gif"/> Draw a card.</font></td><td><font color="Black">203</font></td><td><font color="Black">C</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/auchindoun_spirit_towers.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2340">Auchindoun Spirit Towers</a></font></td><td><font color="Black">When you draw a card, add a capture counter.<br><img src="images/icon-exhaust.gif"/>, Remove five capture counters <img src="images/icon-arrow.gif"/> Turn target resource face down.</font></td><td><font color="Black">263</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_circle_of_blood.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2383">Circle of Blood, The</a></font></td><td><font color="Black">When a hero or ally in your party deals damage, add an arena counter.<br><img src="images/icon-exhaust.gif"/>, Remove three arena counters <img src="images/icon-arrow.gif"/> Put an Arena Gladiator ally token into play with 1 [Melee] ATK / 1 health.</font></td><td><font color="Black">203</font></td><td><font color="Black">C</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_darkmoon_faire.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2063">Darkmoon Faire, The</a></font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"/>, Discard a card <img src="images/icon-arrow.gif"/> Draw a card.<br>At the start of your turn, if you control cards in play with costs 1, 2, 3, 4, 5, 6, 7, and 8, you win the game.</font></td><td><font color="Black">5</font></td><td><font color="Black">R</font></td><td><font color="Black">DMF</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/darnassus.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2147">Darnassus</a></font></td><td><font color="Black"><b>Night Elf Hero Required</b><br>On your turn: 1, <img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> Ready target Night Elf in your party. It can't attack this turn.</font></td><td><font color="Black">257</font></td><td><font color="Black">R</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/deepholm.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=4139">Deepholm</a></font></td><td><font color="Black">On your turn, if a hero or ally you controlled dealt melee ([Melee]) damage this turn: 2, [Exhaust] -> Put a 2 [Melee] / 1 [Health] Earth Elemental ally token into play.<br>When a Earth Elemental enters play under your control, target ally has <b>Assault 1</b> this turn.</font></td><td><font color="Black">218</font></td><td><font color="Black">R</font></td><td><font color="Black">WOE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_exodar.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2550">Exodar, The</a></font></td><td><font color="Black"><b>Draenei Hero Required</b><br>1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Draenei in your party have +1 ATK this turn.</font></td><td><font color="Black">206</font></td><td><font color="Black">R</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/eye_of_the_storm.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2612">Eye of the Storm</a></font></td><td><font color="Black">When you play a card, add an honor counter.<br><img src="images/icon-exhaust.gif">, Remove four honor counters <img src="images/icon-arrow.gif"/> Exhaust up to four target heroes and/or allies.</font></td><td><font color="Black">204</font></td><td><font color="Black">C</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/firelands.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=4140">Firelands</a></font></td><td><font color="Black">On your turn, if a hero or ally you controlled dealt fire ([Fire]) damage this turn: 2, [Exhaust] -> Put a 2 [Fire] / 1 [Health] Fire Elemental ally token into play.<br>When a Fire Elemental enters play under your control, remove the top two cards of target player's deck from the game.</font></td><td><font color="Black">219</font></td><td><font color="Black">R</font></td><td><font color="Black">WOE</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/fordragon_hold.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3380">Fordragon Hold</a></font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target [Alliance] hero or ally you control has <b>Assault 1</b> this turn.<br>If you control an ally with Bolvar in its name: <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> [Alliance] heroes and allies you control have <b>Assault 1</b> this turn.</font></td><td><font color="Black">218</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/gilneas.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3887">Gilneas</a></font></td><td><font color="Black">4 <img src="images/icon-arrow.gif"> Worgen you control have <b>Assault 2</b> this turn.</font></td><td><font color="Black">269</font></td><td><font color="Black">R</font></td><td><font color="Black">WB</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/gnomeregan.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2631">Gnomeregan</a></font></td><td><font color="Black"><b>Gnome Hero Required</b><br>Gnomes in your party are <b>irradiated</b>. <i>(When this character deals combat damage to an ally that's not irradiated, it becomes irradiated.)</i><br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> Destroy target <b>irradiated</b> ally.</font></td><td><font color="Black">206</font></td><td><font color="Black">R</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/gurubashi_arena.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2512">Gurubashi Arena</a></font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> Target ally in your party is an Arena ally this turn.</font></td><td><font color="Black">201</font></td><td><font color="Black">U</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/halaa.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2118">Halaa</a></font></td><td><font color="Black">At the start of your turn, if you have more allies than each opponent, add a capture counter.<br><img src="images/icon-exhaust.gif"/>, Remove four capture counters <img src="images/icon-arrow.gif"/> Put four Halaani ally tokens into play with 1 [Melee] ATK / 1 health.</font></td><td><font color="Black">264</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/hellfire_citadel.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2356">Hellfire Citadel</a></font></td><td><font color="Black">When an opposing ally is destroyed, add a capture counter.<br><img src="images/icon-exhaust.gif"/>, Remove three capture counters <img src="images/icon-arrow.gif"/> Draw a card.</font></td><td><font color="Black">265</font></td><td><font color="Black">C</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ironforge.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2632">Ironforge</a></font></td><td><font color="Black"><b>Dwarf Hero Required</b><br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> Put target armor or weapon card from your graveyard into hand if its cost is less than the number of Dwarves in your party.</font></td><td><font color="Black">207</font></td><td><font color="Black">R</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/korkron_vanguard.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3381">Kor'kron Vanguard</a></font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target [Horde] hero or ally you control has <b>Assault 1</b> this turn.<br>If you control an ally with Saurfang in its name: <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target [Horde] hero or ally you control has <b>Assault 3</b> this turn.</font></td><td><font color="Black">219</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/legendary_leathers_dalaran.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2928">Legendary Leathers, Dalaran</a></font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> You pay 2 less to play your next Leather or Mail armor this turn for each Leatherworking hero and ally you control.</font></td><td><font color="Black">268</font></td><td><font color="Black">R</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/lost_isles.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3888">Lost Isles</a></font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target Goblin you control has <b>Assault 1</b> this turn for each equipment you control.</font></td><td><font color="Black">270</font></td><td><font color="Black">R</font></td><td><font color="Black">WB</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/orgrimmar.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2571">Orgrimmar</a></font></td><td><font color="Black"><b>Orc Hero Required</b><br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> Target Orc in your party has <b>ferocity</b> this turn.</font></td><td><font color="Black">207</font></td><td><font color="Black">R</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/orgrims_hammer.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3484">Orgrim's Hammer</a></font></td><td><font color="Black">When a quest you control turns face down, add a cannonball counter.<br>On your turn: 1, <img src="images/icon-exhaust.gif">, Remove two cannoball counters <img src="images/icon-arrow.gif"> Your hero deals 4 ranged damage to target ally.</font></td><td><font color="Black">219</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_ring_of_blood.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2452">Ring of Blood, The</a></font></td><td><font color="Black">As a cost to place this location face up, reveal an Arena card from your hand.<br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> You pay 2 less to complete your next quest this turn.</font></td><td><font color="Black">202</font></td><td><font color="Black">U</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_trials.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2513">Ring of Trials</a></font></td><td><font color="Black">When a hero or ally in your party deals damage, add an arena counter.<br><img src="images/icon-exhaust.gif">, Remove three arena counters <img src="images/icon-arrow.gif"/> Target player chooses an ally in his party, and then you choose an ally in your party. Each deals melee damage equal to its ATK to the other.</font></td><td><font color="Black">204</font></td><td><font color="Black">C</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_ruins_of_lordaeron.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2455">Ruins of Lordaeron, The</a></font></td><td><font color="Black">When a hero or ally in your party deals damage, add an arena counter.<br><img src="images/icon-exhaust.gif">, Remove three arena counters <img src="images/icon-arrow.gif"/> Put up to three target cards from one player's graveyard on the bottom of his deck.</font></td><td><font color="Black">205</font></td><td><font color="Black">C</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/senjin_village.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2148">Sen'jin Village</a></font></td><td><font color="Black"><b>Troll Hero Required</b><br>At the start of your turn, choose a Troll in your party, and it may heal 1 damage from itself.</font></td><td><font color="Black">260</font></td><td><font color="Black">R</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/silithus.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2215">Silithus</a></font></td><td><font color="Black">At the start of your turn, add capture counters equal to the combined cost of allies in your party.<br><img src="images/icon-exhaust.gif"/>, Remove 200 capture counters <img src="images/icon-arrow.gif"/> Gain control of all cards in play except heroes.</font></td><td><font color="Black">266</font></td><td><font color="Black">R</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/silvermoon_city.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2591">Silvermoon City</a></font></td><td><font color="Black"><b>Blood Elf Hero Required</b><br>As Silvermoon City enters play, choose arcane, fire, frost, nature, or shadow.<br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> Target Blood Elf in your party has the chosen <b>resistance</b> this turn.</font></td><td><font color="Black">208</font></td><td><font color="Black">R</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_skybreaker.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3416">Skybreaker, The</a></font></td><td><font color="Black">When a quest you control turns face down, add a cannonball counter.<br>On your turn: 1, <img src="images/icon-exhaust.gif">, Remove two cannonball counters <img src="images/icon-arrow.gif"> Your hero deals 4 ranged damage to target hero.</font></td><td><font color="Black">220</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/skywall.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=4141">Skywall</a></font></td><td><font color="Black">On your turn, if a hero or ally you controlled dealt nature ([Nature]) damage this turn: 2, [Exhaust] -> Put a 2 [Nature] / 1 [Health] Air Elemental ally token into play.<br>When an Air Elemental enters play under your control, you may exhaust target ally.</font></td><td><font color="Black">220</font></td><td><font color="Black">R</font></td><td><font color="Black">WOE</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/southshore.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2113">Southshore</a></font></td><td><font color="Black">On your turn: 1, <img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> When target [Alliance] ally in your party next deals damage to an ally with lower cost this turn, draw a card.</font></td><td><font color="Black">258</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/stormwind_city.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2117">Stormwind City</a></font></td><td><font color="Black"><b>Human Hero Required</b><br>If a Human ally is in your party: <img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> You pay 2 less to play your next ally this turn.</font></td><td><font color="Black">259</font></td><td><font color="Black">R</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/talismanic_textiles_dalaran.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2929">Talismanic Textiles, Dalaran</a></font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Put X + 1 [Armor] counters on target Cloth armor you control, where X is the number of Tailoring heroes and allies you control.</font></td><td><font color="Black">269</font></td><td><font color="Black">R</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/tanks_for_everything_dalaran.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2866">Tanks for Everything, Dalaran</a></font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Ready up to X target Plate armor you control, where X is the number of Blacksmithing heroes and allies you control.</font></td><td><font color="Black">270</font></td><td><font color="Black">R</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/tarren_mill.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2114">Tarren Mill</a></font></td><td><font color="Black">On your turn: 1, <img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> When target [Horde] ally in your party next deals damage to an ally with higher cost this turn, draw a card.</font></td><td><font color="Black">261</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/thunder_bluff.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2105">Thunder Bluff</a></font></td><td><font color="Black"><b>Tauren Hero Required</b><br>Tauren in your party have +1 health.</font></td><td><font color="Black">262</font></td><td><font color="Black">R</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/towers_of_eastern_plaguelands.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2257">Towers of Eastern Plaguelands</a></font></td><td><font color="Black">When an opposing ally is destroyed, add a capture counter.<br><img src="images/icon-exhaust.gif"/>, Remove four capture counters <img src="images/icon-arrow.gif"/> Each opposing hero deals 4 nature damage to itself.</font></td><td><font color="Black">267</font></td><td><font color="Black">C</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/twilight_citadel.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=4484">Twilight Citadel</a></font></td><td><font color="Black">On your turn: 1, [Exhaust] -> Put a 1 [Shadow] / 1 [Health] Twilight Dragonkin ally token into play.</font></td><td><font color="Black">220</font></td><td><font color="Black">R</font></td><td><font color="Black">ToD</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/twin_spire_ruins.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2345">Twin Spire Ruins</a></font></td><td><font color="Black">When an opposing ally is destroyed, add a capture counter.<br>On your turn: 2, <img src="images/icon-exhaust.gif"/>, Remove two capture counters <img src="images/icon-arrow.gif"/> Put an ally card with cost 2 or less from your graveyard into play.</font></td><td><font color="Black">268</font></td><td><font color="Black">C</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/undercity.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2633">Undercity</a></font></td><td><font color="Black"><b>Undead Hero Required</b><br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> You may remove target ally card in a graveyard from the game. If you do, an Undead in your party heals 2 damage from itself.</font></td><td><font color="Black">208</font></td><td><font color="Black">R</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/warsong_gulch.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2695">Warsong Gulch</a></font></td><td><font color="Black">When you play a card, add an honor counter.<br><img src="images/icon-exhaust.gif">, Remove two honor counters <img src="images/icon-arrow.gif"> Target ally is a <b>protector</b> this turn.</font></td><td><font color="Black">205</font></td><td><font color="Black">C</font></td><td><font color="Black">FoH</font></td>
+		</tr>
+	</table>
+</div>
+        
+
+        
+<table width="900">
+  <tr><td align="center">
+
+<hr size="1" />
+<script type="text/javascript"><!--
+google_ad_client = "pub-7634380918769478";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "6728B2";
+google_color_bg = "FFFFFF";
+google_color_link = "6131BD";
+google_color_text = "000000";
+google_color_url = "CC0000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td></tr>
+<tr><td>	  <hr size="1"/>
+
+	  <p class="legal">wowtcgdb.com is entirely fan-based. No one from Blizzard Entertainment or The Upper Deck Company participated in the construction of this site. This site is not made by or endorsed by Blizzard Entertainment or The Upper Deck Company. This site is done in good will to help promote and share information about the World of Warcraft Trading Card Game. Warcraft, World of Warcraft and Blizzard Entertainment are trademarks and/or registered trademarks of Blizzard Entertainment, Inc., in the U.S. and/or other countries. We hold no legal rights to anything offered on this site. This site, or sections of it, will be removed upon inquiry of copyright owner(s). Contact: <a href="mailto:wowtcgdb@gmail.com">wowtcgdb@gmail.com</a></p></td></tr>
+	  <tr><td align="center">
+	  
+	  
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1776897; 
+var sc_invisible=0; 
+var sc_partition=16; 
+var sc_security="7353a105"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c17.statcounter.com/counter.php?sc_project=1776897&amp;java=0&amp;security=7353a105&amp;invisible=0" alt="free web stats" border="0"/></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1098482-1";
+urchinTracker();
+</script>
+	  </td></tr>
+</table>        
+    </div><br><br><br><br><br><br><br>
+    </form>
+</body>
+</html>
