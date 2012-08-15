@@ -4,8 +4,5 @@
 *.jar
 *.war
 *.ear
-/WoWTCGApp/.svn/
-/WoWTCGApp/nbproject/private/
-/WoWTCGApp/build/
-/WoWTCGCrawler/build/
-/WoWTCGCrawler/.svn/
+WoWTCGApp/build/
+WoWTCGCrawler/build/
