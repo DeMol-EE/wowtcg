@@ -72,7 +72,7 @@ public class Connection extends Thread {
 	    }
 	    reader.terminate();
 	    System.err.println("Closing connection and go to offline mode!!");
-	    delegate.terminateSession();
+//	    delegate.terminateSession();
 	}
     }
     
@@ -106,7 +106,7 @@ public class Connection extends Thread {
 		    System.err.println("Connection terminated");
 		    if(showMessage) JOptionPane.showMessageDialog(new JFrame(), "Connection closed by foreign host, returning to offline mode!", "Connection closed", JOptionPane.ERROR_MESSAGE);
 		    // close connection
-		    delegate.terminateSession();
+//		    delegate.terminateSession();
 		    break;
 		} catch (ClassNotFoundException ex) {
 		    break;

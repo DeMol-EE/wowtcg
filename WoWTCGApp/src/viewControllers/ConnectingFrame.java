@@ -82,7 +82,7 @@ public class ConnectingFrame extends javax.swing.JFrame {
 	Connection conn = new Connection(delegate, client, host);
 	conn.start();
 	ConnectionProxy prox = new ConnectionProxy(conn);
-	delegate.startSession(prox);
+		
 	parent.dispose();
 	this.dispose();
     }

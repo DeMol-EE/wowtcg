@@ -26,15 +26,18 @@ public class LoadingScreen extends javax.swing.JFrame {
 	this.setLocationRelativeTo(null);
 	
 	this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-	this.setResizable(false);
+//	this.setResizable(false);
 	this.setFocusable(false);
 	this.setEnabled(false);
 	
-	imagePanelBean1.setBackgroundImage(ImageLoader.createImageIconAtHomeLocation("wow_bg2.jpg"));
+	int r = (int)(Math.random()*10)+1;
+	
+	imagePanelBean1.setBackgroundImage(ImageLoader.createImageIconAtHomeLocation("wow_bg"+r+".jpg"));
     }
     
-    public void setLoadingLabel(String msg){
-	this.loadingLabel.setText(msg);
+    public void setLoading(int percent, String loading){
+	this.progressOutlet.setValue(percent);
+	this.progressOutlet.setString(percent+" % - Loading "+loading+"...");
     }
 
     /** This method is called from within the constructor to
@@ -46,68 +49,49 @@ public class LoadingScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         imagePanelBean1 = new images.ImagePanelBean();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        loadingLabel = new javax.swing.JLabel();
+        progressOutlet = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 48));
-        jLabel1.setText("WoW TCG");
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setText("Developed by Warkst");
-
-        loadingLabel.setFont(new java.awt.Font("Lucida Grande", 2, 10)); // NOI18N
-        loadingLabel.setText("Loading xxx...");
+        imagePanelBean1.setBackground(new java.awt.Color(153, 0, 255));
+        imagePanelBean1.setEnabled(false);
+        imagePanelBean1.setFocusable(false);
 
         org.jdesktop.layout.GroupLayout imagePanelBean1Layout = new org.jdesktop.layout.GroupLayout(imagePanelBean1);
         imagePanelBean1.setLayout(imagePanelBean1Layout);
         imagePanelBean1Layout.setHorizontalGroup(
             imagePanelBean1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(imagePanelBean1Layout.createSequentialGroup()
-                .add(imagePanelBean1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(imagePanelBean1Layout.createSequentialGroup()
-                        .add(96, 96, 96)
-                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 274, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(imagePanelBean1Layout.createSequentialGroup()
-                        .add(155, 155, 155)
-                        .add(jLabel2))
-                    .add(imagePanelBean1Layout.createSequentialGroup()
-                        .add(141, 141, 141)
-                        .add(loadingLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(321, Short.MAX_VALUE))
+            .add(0, 721, Short.MAX_VALUE)
         );
         imagePanelBean1Layout.setVerticalGroup(
             imagePanelBean1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(imagePanelBean1Layout.createSequentialGroup()
-                .add(105, 105, 105)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 72, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jLabel2)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(loadingLabel)
-                .addContainerGap(255, Short.MAX_VALUE))
+            .add(0, 464, Short.MAX_VALUE)
         );
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(imagePanelBean1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(imagePanelBean1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel1.add(imagePanelBean1, java.awt.BorderLayout.CENTER);
+
+        progressOutlet.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        progressOutlet.setEnabled(false);
+        progressOutlet.setFocusable(false);
+        progressOutlet.setPreferredSize(new java.awt.Dimension(146, 50));
+        progressOutlet.setString("0% - Loading xxx");
+        progressOutlet.setStringPainted(true);
+        jPanel1.add(progressOutlet, java.awt.BorderLayout.SOUTH);
+
+        getContentPane().add(jPanel1, new java.awt.GridBagConstraints());
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private images.ImagePanelBean imagePanelBean1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel loadingLabel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar progressOutlet;
     // End of variables declaration//GEN-END:variables
 }

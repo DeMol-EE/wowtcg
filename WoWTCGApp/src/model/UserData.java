@@ -11,8 +11,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
@@ -150,7 +148,7 @@ public class UserData {
 		ext = s.substring(i + 1).toLowerCase();
 	    }
 
-	    if (ext.equalsIgnoreCase("wtd")) {
+	    if (ext!=null && ext.equalsIgnoreCase("wtd")) {
 		return true;
 	    } else {
 		return false;

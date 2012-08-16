@@ -6,3 +6,7 @@
 *.ear
 WoWTCGApp/build/
 WoWTCGCrawler/build/
+/WoWTCGApp/nbproject/private/
+/WoWTCGCrawler/nbproject/private/
+/OnlineGameClient/nbproject/private/
+/OnlineGameClient/build/

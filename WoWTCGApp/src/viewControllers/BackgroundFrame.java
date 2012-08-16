@@ -12,7 +12,6 @@ package viewControllers;
 
 import images.ImageLoader;
 import java.awt.Image;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import model.UserData;
 
