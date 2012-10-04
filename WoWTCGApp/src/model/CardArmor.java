@@ -13,8 +13,8 @@ import viewControllers.CardArmorFrame;
  */
 public class CardArmor extends Card {
     
-    public CardArmor(String name, String subtype, String tags, String restriction, String cost, int def, int nr, char rarity, String set, String rules) {
-	super("template.png", name, "Armor", subtype, "", "", tags, "", restriction, cost, 0, "", def, nr, rarity, set, rules, "", "");
+    public CardArmor(String imgPath, String name, String subtype, String tags, String restriction, String cost, int def, int nr, char rarity, String set, String rules) {
+	super(imgPath, name, "Armor", subtype, "", "", tags, "", restriction, cost, 0, "", def, nr, rarity, set, rules, "", "");
     }
 
     public CardArmor(Card cloneMe) {

@@ -13,8 +13,8 @@ package viewControllers;
 import images.ImageLoader;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Point;
+import java.io.File;
 import java.io.FileNotFoundException;
 import javax.swing.BorderFactory;
 import javax.swing.JFileChooser;
@@ -23,6 +23,7 @@ import javax.swing.JMenu;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.ToolTipManager;
 import model.CardSnapshot;
 import model.Model;
 import model.UserData;
@@ -49,6 +50,10 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
 
 	initComponents();
 	styleComponents();
+	
+	// pimp tooltips
+	ToolTipManager.sharedInstance().setInitialDelay(0);
+	ToolTipManager.sharedInstance().setDismissDelay(Integer.MAX_VALUE);
 	
 	loadPreface();
     }
@@ -130,6 +135,7 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
         editDeckItem = new javax.swing.JMenuItem();
         optionsMenu = new javax.swing.JMenu();
         setDefaultDeckFolderItem = new javax.swing.JMenuItem();
+        dataFolderItem = new javax.swing.JMenuItem();
         nicknameItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -226,6 +232,14 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
         });
         optionsMenu.add(setDefaultDeckFolderItem);
 
+        dataFolderItem.setText("Set data folder...");
+        dataFolderItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataFolderItemActionPerformed(evt);
+            }
+        });
+        optionsMenu.add(dataFolderItem);
+
         nicknameItem.setText("Set nickname...");
         nicknameItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,6 +310,46 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
     private void optionsMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optionsMenuMouseExited
 	this.optionsMenu.setBorderPainted(false);
     }//GEN-LAST:event_optionsMenuMouseExited
+
+    private void dataFolderItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataFolderItemActionPerformed
+	String dataPath = userData.getDataPath();
+	JFileChooser fc = new JFileChooser(dataPath);
+	fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+	fc.setMultiSelectionEnabled(false);
+	int fcChoice;
+	do {
+	    if (!new File(dataPath+"Data_type-hero.txt").exists()
+		|| !new File(dataPath+"Data_type-ally.txt").exists()
+		|| !new File(dataPath+"Data_type-quest.txt").exists()
+		|| !new File(dataPath+"Data_type-ability.txt").exists()
+		|| !new File(dataPath+"Data_type-weapon.txt").exists()
+		|| !new File(dataPath+"Data_type-armor.txt").exists()
+		|| !new File(dataPath+"Data_type-armorset.txt").exists()
+		|| !new File(dataPath+"Data_type-item.txt").exists()
+		|| !new File(dataPath+"Data_type-location.txt").exists()
+		|| !new File(dataPath+"images").exists()
+		|| !new File(dataPath+"images").isDirectory()){
+		JOptionPane.showMessageDialog(null, "Please choose a folder that contains the data files and images folder!", "Error!", JOptionPane.ERROR_MESSAGE);
+	    }
+		
+	    fcChoice  = fc.showOpenDialog(null);
+	    dataPath = fc.getSelectedFile().getPath()+File.separator;
+	} while((!new File(dataPath+"Data_type-hero.txt").exists()
+		|| !new File(dataPath+"Data_type-ally.txt").exists()
+		|| !new File(dataPath+"Data_type-quest.txt").exists()
+		|| !new File(dataPath+"Data_type-ability.txt").exists()
+		|| !new File(dataPath+"Data_type-weapon.txt").exists()
+		|| !new File(dataPath+"Data_type-armor.txt").exists()
+		|| !new File(dataPath+"Data_type-armorset.txt").exists()
+		|| !new File(dataPath+"Data_type-item.txt").exists()
+		|| !new File(dataPath+"Data_type-location.txt").exists()
+		|| !new File(dataPath+"images").exists()
+		|| !new File(dataPath+"images").isDirectory()) 
+		 && fcChoice == JFileChooser.APPROVE_OPTION);
+	    
+	// update the ud with the new dataPath
+	if(fcChoice == JFileChooser.APPROVE_OPTION) userData.setDataPath(dataPath);
+    }//GEN-LAST:event_dataFolderItemActionPerformed
     
     private void quit() {
 	this.dispose();
@@ -307,6 +361,7 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
     private javax.swing.JMenu cardsMenu;
     private images.ImagePanelBean contentPanel;
     private javax.swing.JMenuItem createDeckItem;
+    private javax.swing.JMenuItem dataFolderItem;
     private javax.swing.JMenuItem editDeckItem;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar menuBar;
@@ -325,7 +380,7 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
 	if (rVal == JFileChooser.APPROVE_OPTION) {
 	    try {
 		// show connection frame 		
-		new ConnectionFrame(this, userData.loadDeckFromFile(c.getSelectedFile())).setVisible(true);
+		new ConnectionFrame(this, model.loadDeckFromFile(c.getSelectedFile())).setVisible(true);
 	    } catch (FileNotFoundException ex) {
 		System.err.println("Error loading deck! " + ex);
 		JOptionPane.showMessageDialog(new JFrame(), "Error loading deck from file! Opernation aborted", "Error", JOptionPane.ERROR_MESSAGE);
@@ -337,14 +392,14 @@ public class MainFrame extends javax.swing.JFrame implements MessageHandler {
      * Starts an offline session. Prompts the user to select a deck and launches a SessionController with the given deck and this as callback.
      */
     public void playOffline(){
-	JFileChooser c = userData.getFileChooser(); 	
-	int rVal = c.showOpenDialog(this); 	
-	if (rVal == JFileChooser.APPROVE_OPTION) { 	    
-	    try { 		
-		 setContent(new SessionController(this, userData.loadDeckFromFile(c.getSelectedFile())));
-	    } catch (FileNotFoundException ex) { 				
-		System.err.println("Error loading deck! " + ex); 		
-		JOptionPane.showMessageDialog(new JFrame(), "Error loading deck from file! Opernation aborted", "Error", JOptionPane.ERROR_MESSAGE); 	    
+	JFileChooser c = userData.getFileChooser();
+	int rVal = c.showOpenDialog(this);
+	if (rVal == JFileChooser.APPROVE_OPTION) {
+	    try {
+		 setContent(new SessionController(this, model.loadDeckFromFile(c.getSelectedFile())));
+	    } catch (FileNotFoundException ex) {
+		System.err.println("Error loading deck! " + ex);
+		JOptionPane.showMessageDialog(new JFrame(), "Error loading deck from file! Opernation aborted", "Error", JOptionPane.ERROR_MESSAGE);
 	    }
 	}
     }

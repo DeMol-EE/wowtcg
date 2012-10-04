@@ -7,6 +7,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import viewControllers.CardController;
 
 /**
  *
@@ -15,11 +16,11 @@ import java.util.List;
 public class Deck {
     private final String name;
     
-    private final String hero;
+    private final CardController hero;
     private final String clazz;
-    private final ArrayList<Card> cards;
+    private final ArrayList<CardController> cards;
 
-    public Deck(String name, String hero, String clazz, ArrayList<Card> cards) {
+    public Deck(String name, CardController hero, String clazz, ArrayList<CardController> cards) {
 	this.name = name;
 	this.hero = hero;
 	this.clazz = clazz;
@@ -30,11 +31,11 @@ public class Deck {
 	return name;
     }
 
-    public List<Card> getCards() {
+    public List<CardController> getCards() {
 	return cards;
     }
 
-    public String getHero() {
+    public CardController getHero() {
 	return hero;
     }
     
@@ -48,8 +49,8 @@ public class Deck {
     
     public String[] getCardList(){
 	ArrayList<String> cardList = new ArrayList<String>();
-	for (Card card : cards) {
-	    cardList.add(card.getName());
+	for (CardController card : cards) {
+	    cardList.add(card.getCardName());
 	}
 	return cardList.toArray(new String[0]);
     }
@@ -59,12 +60,13 @@ public class Deck {
     }
     
     // pop the first card
-    public Card drawCard(){
+    public CardController drawCard(){
 	if(cards.size()>0) return cards.remove(0);
 	else return null;
     }
     
-    public void putOnTop(Card card){
+    // push on top
+    public void putOnTop(CardController card){
 	cards.add(0, card);
     }
 }

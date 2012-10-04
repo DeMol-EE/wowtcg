@@ -13,8 +13,8 @@ import viewControllers.CardLocationFrame;
  */
 public class CardLocation extends Card {
 
-    public CardLocation(String name, int nr, char rarity, String set, String rules) {
-	super("template.png", name, "Location", "", "", "", "", "", "", " ", 0, "", 0, nr, rarity, set, rules, "", "");
+    public CardLocation(String imgPath, String name, int nr, char rarity, String set, String rules) {
+	super(imgPath, name, "Location", "", "", "", "", "", "", " ", 0, "", 0, nr, rarity, set, rules, "", "");
     }
 
     public CardLocation(Card cloneMe) {

@@ -14,8 +14,8 @@ import viewControllers.CardAbilityFrame;
  */
 public class CardAbility extends Card {
 
-    public CardAbility(String name, String supertype, String subtype, String talent, String faction, String tags, String restriction, String cost, String rules, int nr, char rarity, String set){
-	super("template.png", name, "Ability", subtype, supertype, "", tags, faction, restriction, cost, 0, "", 0, nr, rarity, set, rules, talent, "");
+    public CardAbility(String imgPath, String name, String supertype, String subtype, String talent, String faction, String tags, String restriction, String cost, String rules, int nr, char rarity, String set){
+	super(imgPath, name, "Ability", subtype, supertype, "", tags, faction, restriction, cost, 0, "", 0, nr, rarity, set, rules, talent, "");
     }
     
     public CardAbility(Card cloneMe) {
@@ -34,5 +34,4 @@ public class CardAbility extends Card {
 	f.setVisible(true);
 	f.electFirstResponder();
     }
-    
 }

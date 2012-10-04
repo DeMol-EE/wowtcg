@@ -5,6 +5,7 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +16,9 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.TreeMap;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import viewControllers.CardController;
 
 /**
  * Offers dynamic access to the files downloaded by the webcrawler.
@@ -25,6 +29,8 @@ import java.util.TreeMap;
 public class Model {
     private static final String CARD_DELIMITER = "::";
     private static final String FIELD_DELIMITER = ";;";
+    
+    private final UserData ud;
     
     private ArrayList<String> cardTypes = new ArrayList<String>();
     private ArrayList<String> classes = new ArrayList<String>();
@@ -39,10 +45,64 @@ public class Model {
     private HashMap<String, CardItem> items = new HashMap<String, CardItem>();
     private HashMap<String, CardLocation> locations = new HashMap<String, CardLocation>();
     
-    public Model(){
-	// load all data from crawled files
-	System.out.println("Starting the data model, loading all cards from the system...");
+    public Model(UserData ud){
+	this.ud = ud;
 	
+	String dataPath = ud.getDataPath();
+	// load all data from crawled files
+	System.out.println("Model::Starting the data model, loading all cards from the system... (data path: "+dataPath+")");
+	
+	while(!new File(dataPath+"Data_type-hero.txt").exists()
+		|| !new File(dataPath+"Data_type-ally.txt").exists()
+		|| !new File(dataPath+"Data_type-quest.txt").exists()
+		|| !new File(dataPath+"Data_type-ability.txt").exists()
+		|| !new File(dataPath+"Data_type-weapon.txt").exists()
+		|| !new File(dataPath+"Data_type-armor.txt").exists()
+		|| !new File(dataPath+"Data_type-armorset.txt").exists()
+		|| !new File(dataPath+"Data_type-item.txt").exists()
+		|| !new File(dataPath+"Data_type-location.txt").exists()
+		|| !new File(dataPath+"images").exists()
+		|| !new File(dataPath+"images").isDirectory()){
+	    
+	    if(!new File(dataPath+"Data_type-hero.txt").exists()) System.out.println("Model::Can't find hero cards! ("+dataPath+"Data_type-hero.txt)");
+	    if(!new File(dataPath+"Data_type-ally.txt").exists()) System.out.println("Model::Can't find ally cards! ("+dataPath+"Data_type-ally.txt)");
+	    if(!new File(dataPath+"Data_type-quest.txt").exists()) System.out.println("Model::Can't find quest cards! ("+dataPath+"Data_type-quest.txt)");
+	    if(!new File(dataPath+"Data_type-ability.txt").exists()) System.out.println("Model::Can't find ability cards! ("+dataPath+"Data_type-ability.txt)");
+	    if(!new File(dataPath+"Data_type-weapon.txt").exists()) System.out.println("Model::Can't find weapon cards! ("+dataPath+"Data_type-weapon.txt)");
+	    if(!new File(dataPath+"Data_type-armor.txt").exists()) System.out.println("Model::Can't find armor cards! ("+dataPath+"Data_type-armor.txt)");
+	    if(!new File(dataPath+"Data_type-armorset.txt").exists()) System.out.println("Model::Can't find armorset cards! ("+dataPath+"Data_type-armorset.txt)");
+	    if(!new File(dataPath+"Data_type-item.txt").exists()) System.out.println("Model::Can't find item cards! ("+dataPath+"Data_type-item.txt)");
+	    if(!new File(dataPath+"Data_type-location.txt").exists()) System.out.println("Model::Can't find location cards! ("+dataPath+"Data_type-location.txt)");
+	    if(!new File(dataPath+"images").exists()) System.out.println("Model::Can't find images folder! ("+dataPath+"images)");
+	    if(!new File(dataPath+"images").isDirectory()) System.out.println("Model::images is not a folder! ("+dataPath+"images)");
+	    
+	    JFileChooser fc = new JFileChooser();
+	    fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+	    fc.setMultiSelectionEnabled(false);
+	    
+	    Object[] options = new Object[]{"Download data", "Set data folder"};
+	    int choice = JOptionPane.showOptionDialog(null, "There was a problem loading the card data. What would you like to do?", "Warning", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+	    System.out.println("Model::JOptionPane closed with choice "+choice);
+	    if(choice == 0){
+		System.out.println("Model::DOWNLOAD DATA - show file chooser to choose download directory");
+	    } else if (choice == 1) {
+		int fcChoice;
+		do {
+		    fcChoice = fc.showOpenDialog(null);
+		    if(fcChoice == JFileChooser.CANCEL_OPTION){
+			System.exit(0);
+		    }
+		} while(fcChoice != JFileChooser.APPROVE_OPTION);
+		
+		// accepted
+		dataPath = fc.getSelectedFile().getPath()+File.separator;
+	    }
+	}
+	    
+	// update the ud with the new dataPath
+	ud.setDataPath(dataPath);
+	
+	// read the actual data
 	readHeroCards();
 	readAllyCards();
 	readQuestCards();
@@ -53,12 +113,12 @@ public class Model {
 	readItemCards();
 	readLocationCards();
 	
-	System.out.println("Data model launched, all cards loaded!");
+	System.out.println("Model::Data model launched, all cards loaded!");
     }
     
     private void readHeroCards(){
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-hero.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-hero.txt"));
 
 	    String str;
 
@@ -69,6 +129,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String race = extract(str);
@@ -89,7 +151,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardHero hero = new CardHero(name, race, clazz, faction, health, nr, set, rules, talent, professions);
+		    CardHero hero = new CardHero(ud.getImagePath()+imgPath, name, race, clazz, faction, health, nr, set, rules, talent, professions);
 		    heroes.put(hero.getName(), hero);
 		}
 	    }
@@ -119,7 +181,7 @@ public class Model {
     
     private void readAllyCards(){
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-ally.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-ally.txt"));
 
 	    String str;
 
@@ -130,6 +192,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String race = extract(str);
@@ -156,7 +220,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardAlly ally = new CardAlly(atkType, name, race, clazz, tags, faction, cost, atk, health, nr, rarity, set, rules);
+		    CardAlly ally = new CardAlly(ud.getImagePath()+imgPath, atkType, name, race, clazz, tags, faction, cost, atk, health, nr, rarity, set, rules);
 		    allies.put(ally.getName(), ally);
 		}
 	    }
@@ -173,7 +237,7 @@ public class Model {
     
     private void readQuestCards(){
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-quest.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-quest.txt"));
 
 	    String str;
 
@@ -184,6 +248,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String faction = extract(str);
@@ -196,7 +262,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardQuest quest = new CardQuest(name, faction, nr, rarity, set, rules);
+		    CardQuest quest = new CardQuest(ud.getImagePath()+imgPath, name, faction, nr, rarity, set, rules);
 		    quests.put(quest.getName(), quest);
 		}
 	    }
@@ -213,7 +279,7 @@ public class Model {
 
     private void readAbilityCards() {
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-ability.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-ability.txt"));
 
 	    String str;
 
@@ -224,6 +290,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String supertype = extract(str);
@@ -248,7 +316,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardAbility ability = new CardAbility(name, supertype, subtype, talent, faction, tags, restriction, cost, rules, nr, rarity, set);
+		    CardAbility ability = new CardAbility(ud.getImagePath()+imgPath, name, supertype, subtype, talent, faction, tags, restriction, cost, rules, nr, rarity, set);
 		    abilities.put(ability.getName(), ability);
 		}
 	    }
@@ -265,7 +333,7 @@ public class Model {
     
     private void readWeaponCards() {
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-weapon.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-weapon.txt"));
 
 	    String str;
 
@@ -276,6 +344,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String supertype = extract(str);
@@ -302,7 +372,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardWeapon weapon = new CardWeapon(name, supertype, subtype, tags, restriction, cost, strikeCost, rules, atk, atktype, nr, rarity, set);
+		    CardWeapon weapon = new CardWeapon(ud.getImagePath()+imgPath, name, supertype, subtype, tags, restriction, cost, strikeCost, rules, atk, atktype, nr, rarity, set);
 		    weapons.put(weapon.getName(), weapon);
 		}
 	    }
@@ -319,7 +389,7 @@ public class Model {
     
     private void readArmorCards() {
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-armor.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-armor.txt"));
 
 	    String str;
 
@@ -330,6 +400,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String subtype = extract(str);
@@ -350,7 +422,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardArmor armor = new CardArmor(name, subtype, tags, restriction, cost, def, nr, rarity, set, rules);
+		    CardArmor armor = new CardArmor(ud.getImagePath()+imgPath, name, subtype, tags, restriction, cost, def, nr, rarity, set, rules);
 		    armors.put(armor.getName(), armor);
 		}
 	    }
@@ -367,7 +439,7 @@ public class Model {
     
     private void readArmorsetCards() {
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-armorset.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-armorset.txt"));
 
 	    String str;
 
@@ -378,6 +450,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String subtype = extract(str);
@@ -398,7 +472,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardArmorset armorset = new CardArmorset(name, subtype, tags, restriction, cost, def, nr, rarity, set, rules);
+		    CardArmorset armorset = new CardArmorset(ud.getImagePath()+imgPath, name, subtype, tags, restriction, cost, def, nr, rarity, set, rules);
 		    armorsets.put(armorset.getName(), armorset);
 		}
 	    }
@@ -415,7 +489,7 @@ public class Model {
     
     private void readItemCards() {
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-item.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-item.txt"));
 
 	    String str;
 
@@ -426,6 +500,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String tags = extract(str);
@@ -442,7 +518,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardItem item = new CardItem(name, tags, restriction, cost, nr, rarity, set, rules);
+		    CardItem item = new CardItem(ud.getImagePath()+imgPath, name, tags, restriction, cost, nr, rarity, set, rules);
 		    items.put(item.getName(), item);
 		}
 	    }
@@ -459,7 +535,7 @@ public class Model {
     
     private void readLocationCards() {
 	try {
-	    BufferedReader in = new BufferedReader(new FileReader("Data_type-location.txt"));
+	    BufferedReader in = new BufferedReader(new FileReader(ud.getDataPath()+"Data_type-location.txt"));
 
 	    String str;
 
@@ -470,6 +546,8 @@ public class Model {
 		    str = str.substring(str.indexOf(CARD_DELIMITER)+CARD_DELIMITER.length());
 		    
 		    // read fields
+		    String imgPath = extract(str);
+		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String name = extract(str);
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String rules = extract(str);
@@ -480,7 +558,7 @@ public class Model {
 		    str = str.substring(str.indexOf(FIELD_DELIMITER)+FIELD_DELIMITER.length());
 		    String set = extract(str);
 		    
-		    CardLocation location = new CardLocation(name, nr, rarity, set, rules);
+		    CardLocation location = new CardLocation(ud.getImagePath()+imgPath, name, nr, rarity, set, rules);
 		    locations.put(location.getName(), location);
 		}
 	    }
@@ -678,27 +756,57 @@ public class Model {
 	return allCards.get(name);
     }
     
-    public Card generateCardByName(String type, String name){
+    public CardController generateCardByName(String type, String name){
 	if (type.equalsIgnoreCase("hero")) {
-	    return new CardHero(getCardByName(name));
+	    return new CardController(new CardHero(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("ally")) {
-	    return new CardAlly(getCardByName(name));
+	    return new CardController(new CardAlly(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("quest")) {
-	    return new CardQuest(getCardByName(name));
+	    return new CardController(new CardQuest(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("ability")) {
-	    return new CardAbility(getCardByName(name));
+	    return new CardController(new CardAbility(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("weapon")) {
-	    return new CardWeapon(getCardByName(name));
+	    return new CardController(new CardWeapon(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("armor")) {
-	    return new CardArmor(getCardByName(name));
+	    return new CardController(new CardArmor(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("armorset")) {
-	    return new CardArmorset(getCardByName(name));
+	    return new CardController(new CardArmorset(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("item")) {
-	    return new CardItem(getCardByName(name));
+	    return new CardController(new CardItem(getCardByName(name)));
 	} else if (type.equalsIgnoreCase("location")) {
-	    return new CardLocation(getCardByName(name));
+	    return new CardController(new CardLocation(getCardByName(name)));
 	} else {
 	    return null;
+	}
+    }
+    
+    public Deck loadDeckFromFile(File deckFile) throws FileNotFoundException {
+	try {
+	    BufferedReader in = new BufferedReader(new FileReader(deckFile));
+
+	    String hero = in.readLine();
+	    CardController heroCard = generateCardByName("hero", hero);
+	    String clazz = in.readLine();
+	    ArrayList<CardController> cards = new ArrayList<CardController>();
+
+	    String str;
+	    while ((str = in.readLine()) != null) {
+		int quantity = Integer.parseInt(str.substring(0, str.indexOf(";;")));
+		str = str.substring(str.indexOf(";;") + 2);
+		String type = str.substring(0, str.indexOf(";;"));
+		str = str.substring(str.indexOf(";;") + 2);
+		String name = str.substring(0);
+
+		for (int i = 0; i < quantity; i++) {
+		    CardController aCard = generateCardByName(type, name);
+
+		    cards.add(aCard);
+		}
+	    }
+
+	    return new Deck(deckFile.getName(), heroCard, clazz, cards);
+	} catch (IOException ex) {
+	    throw new FileNotFoundException("IOException occurred while trying to read from file!");
 	}
     }
 }

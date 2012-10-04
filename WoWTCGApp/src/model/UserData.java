@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
@@ -20,16 +19,14 @@ import javax.swing.filechooser.FileFilter;
  */
 public class UserData {
 
-    private Model model;
     private String[] backgrounds;
     private String userBackground;
     private JFileChooser deckFileChooser;
     
+    private String dataPath = "";
     private String decksFolder;
 
-    public UserData(Model model) {
-	this.model = model;
-
+    public UserData() {
 //	System.out.println("STUB:: Starting the user model, loading decks and user preferences...");
 
 	backgrounds = new String[11];
@@ -47,14 +44,20 @@ public class UserData {
 	    // read decks url
 	    decksFolder=in.readLine();
 	    
+	    // read data path
+	    dataPath=in.readLine();
+	    if(dataPath==null) dataPath = "";
+	    if(dataPath.length()>0 && dataPath.charAt(dataPath.length()-1)!=File.separatorChar) dataPath+=File.separator;
 	} catch (FileNotFoundException ex) {
 	    System.err.println("Error loading user file! "+ex+"\nUsing default settings...");
 	    userBackground = backgrounds[10];
 	    decksFolder = null;
+	    dataPath = "";
 	} catch (IOException ex) {
 	    System.err.println("Problem reading from user file! "+ex+"\nUsing default settings...");
 	    userBackground = backgrounds[10];
 	    decksFolder = null;
+	    dataPath = "";
 	}
 	
 	// initiate deckFileChooser
@@ -70,10 +73,13 @@ public class UserData {
 	    out.println(userBackground);
 	    //decksFolder = deckFileChooser.getCurrentDirectory().getAbsolutePath();
 	    if(decksFolder!=null)out.println(decksFolder);
+	    if(dataPath!=null)out.println(dataPath);
 	    out.flush();
 	    out.close();
 	} catch (FileNotFoundException ex) {
 	    System.err.println("Error writing user data to file! Data is not saved!!\n"+ex);
+	    
+	    // TODO: Alert user
 	}
     }
     
@@ -102,34 +108,20 @@ public class UserData {
     public JFileChooser getFileChooser() {
 	return deckFileChooser;
     }
-
-    public Deck loadDeckFromFile(File deckFile) throws FileNotFoundException {
-	try {
-	    BufferedReader in = new BufferedReader(new FileReader(deckFile));
-
-	    String hero = in.readLine();
-	    String clazz = in.readLine();
-	    ArrayList<Card> cards = new ArrayList<Card>();
-
-	    String str;
-	    while ((str = in.readLine()) != null) {
-		int quantity = Integer.parseInt(str.substring(0, str.indexOf(";;")));
-		str = str.substring(str.indexOf(";;") + 2);
-		String type = str.substring(0, str.indexOf(";;"));
-		str = str.substring(str.indexOf(";;") + 2);
-		String name = str.substring(0);
-
-		for (int i = 0; i < quantity; i++) {
-		    Card aCard = model.generateCardByName(type, name);
-
-		    cards.add(aCard);
-		}
-	    }
-
-	    return new Deck(deckFile.getName(), hero, clazz, cards);
-	} catch (IOException ex) {
-	    throw new FileNotFoundException("IOException occurred while trying to read from file!");
-	}
+    
+    public String getDataPath(){
+	return dataPath;
+    }
+    
+    public String getImagePath(){
+	return dataPath+File.separator+"images"+File.separator;
+    }
+    
+    public void setDataPath(String dataPath){
+	if(dataPath.charAt(dataPath.length()-1)!=File.separatorChar) dataPath+=File.separator;
+	this.dataPath = dataPath;
+	
+	writeUserDataToFile();
     }
 
     private class DeckFileFilter extends FileFilter {

@@ -30,6 +30,8 @@ public class LoadingScreen extends javax.swing.JFrame {
 	this.setFocusable(false);
 	this.setEnabled(false);
 	
+	this.setTitle("WoW: TCG preloader");
+	
 	int r = (int)(Math.random()*10)+1;
 	
 	imagePanelBean1.setBackgroundImage(ImageLoader.createImageIconAtHomeLocation("wow_bg"+r+".jpg"));
@@ -37,7 +39,7 @@ public class LoadingScreen extends javax.swing.JFrame {
     
     public void setLoading(int percent, String loading){
 	this.progressOutlet.setValue(percent);
-	this.progressOutlet.setString(percent+" % - Loading "+loading+"...");
+	this.progressOutlet.setString(percent+" % - "+loading+"...");
     }
 
     /** This method is called from within the constructor to

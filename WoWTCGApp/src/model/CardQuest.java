@@ -13,8 +13,8 @@ import viewControllers.CardQuestFrame;
  */
 public class CardQuest extends Card {
 
-    public CardQuest(String name, String faction, int nr, char rarity, String set, String rules) {
-	super("template.png", name, "Quest", "", "", "", "", faction, "", " ", 0, "", 0, nr, rarity, set, rules, "", "");
+    public CardQuest(String imgPath, String name, String faction, int nr, char rarity, String set, String rules) {
+	super(imgPath, name, "Quest", "", "", "", "", faction, "", " ", 0, "", 0, nr, rarity, set, rules, "", "");
     }
     
     public CardQuest(Card cloneMe) {

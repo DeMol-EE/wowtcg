@@ -21,6 +21,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -30,7 +31,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
-import model.Card;
 import model.CardSnapshot;
 import model.Deck;
 import network.ConnectionProxy;
@@ -40,12 +40,20 @@ import network.MessageHandler;
  *
  * @author Robin jr
  */
-public class SessionController extends javax.swing.JPanel implements MouseListener, MouseMotionListener, MessageHandler {
+public class SessionController extends javax.swing.JPanel implements MouseListener, MouseMotionListener, MessageHandler {  
+    private final Deck deck;
+    private final HandController handController;
+    private final StatusController statusController;
+    private final TableController tableController;
     
+    private ArrayList<CardController> graveyard;
+  
     /** Creates new form SessionController */
     public SessionController(MainFrame callback, Deck playerDeck) {
 	this.parent = callback;
 	this.deck = playerDeck;
+	this.handController = new HandController(this);
+	this.graveyard = new ArrayList<CardController>();
 	
 	// create menu
 	this.sessionMenu = new JMenu("Session");
@@ -64,7 +72,6 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	
 	JMenuItem stop = new JMenuItem("Stop session...");
 	stop.addActionListener(new ActionListener() {
-
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		parent.removeMenu(sessionMenu);
@@ -76,6 +83,18 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	parent.addMenu(sessionMenu);
 	
 	initComponents();
+	
+	this.statusController = StatusController.createAndStart(statusOutlet);
+	
+	// add the table controller
+	this.tableController = new TableController(this);
+	this.tableOutlet.removeAll();
+	this.tableOutlet.add(tableController);
+	this.tableOutlet.repaint();
+	
+	this.handOutlet.removeAll();
+	this.handOutlet.add(handController);
+	this.handOutlet.repaint();
 	
 	styleComponents();
     }
@@ -90,16 +109,40 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
     
     private void styleComponents(){
 	this.deckOutlet.setIcon(ImageLoader.scaleImage(ImageLoader.createImageIconAtHomeLocation("template.png"), this.deckOutlet.getPreferredSize()));
-	this.previewOutlet.setIcon(ImageLoader.scaleImage(ImageLoader.createImageIconAtHomeLocation("template.png"), this.previewOutlet.getPreferredSize()));
+	this.resolvedCard.setIcon(ImageLoader.scaleImage(ImageLoader.createImageIconAtHomeLocation("template.png"), this.resolvedCard.getPreferredSize()));
+	
+	// set the hero
+	this.tableController.setMyHero(deck.getHero());
     }
     
-    /**
-     * Sets the preview image to the specified icon. Automatically resizes to fit the preview (does not respect aspect ratio).
-     * 
-     * @param icon 
-     */
-    public void setPreview(ImageIcon icon){
-	this.previewOutlet.setIcon(ImageLoader.scaleImage(icon, this.previewOutlet.getPreferredSize()));
+    public void updateHand(){
+	this.handOutlet.repaint();
+	this.handOutlet.validate();
+	this.repaint();
+	this.validate();
+    }
+    
+    public void setStatusMessage(String message){
+	statusController.enqueueMessage(message);
+    }
+    
+    public void addCardToTable(CardController card){
+	tableController.addMyCard(card);
+    }
+    
+    public void addCardToResources(CardController card){
+	tableController.addMyResource(card);
+    }
+    
+    public void addCardToGraveyard(CardController card){
+	graveyard.add(0, card);
+    }
+    
+    public void resolve(CardController card){
+	resolvedCardOutlet.removeAll();
+	resolvedCardOutlet.add(card.scale(resolvedCard.getPreferredSize()));
+	resolvedCardOutlet.repaint();
+	resolvedCardOutlet.validate();
     }
 
     /** This method is called from within the constructor to
@@ -110,28 +153,23 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         sideSplit = new javax.swing.JSplitPane();
         masterSplit = new javax.swing.JSplitPane();
         statusPanel = new javax.swing.JPanel();
         statusOutlet = new javax.swing.JLabel();
-        gamePanel = new javax.swing.JSplitPane();
         mainSplit = new javax.swing.JSplitPane();
-        handOutlet = new javax.swing.JPanel();
-        tableOutlet = new javax.swing.JLayeredPane();
-        sidePanel = new javax.swing.JPanel();
+        tableOutlet = new javax.swing.JPanel();
+        playerOutlet = new javax.swing.JPanel();
         cardsPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         graveyardOutlet = new javax.swing.JButton();
         removedFromTheGameOutlet = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         deckOutlet = new javax.swing.JButton();
-        playersSplit = new javax.swing.JSplitPane();
-        vsPanel = new javax.swing.JPanel();
-        vsNameOutlet = new javax.swing.JLabel();
-        playerPanel = new javax.swing.JPanel();
-        playerNameOutlet = new javax.swing.JLabel();
-        previewPanel = new javax.swing.JPanel();
-        previewOutlet = new javax.swing.JLabel();
+        handOutlet = new javax.swing.JPanel();
+        resolvedCardOutlet = new javax.swing.JPanel();
+        resolvedCard = new javax.swing.JButton();
 
         sideSplit.setBorder(null);
         sideSplit.setDividerLocation(500);
@@ -163,214 +201,175 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
         statusPanel.setMaximumSize(new java.awt.Dimension(1440, 30));
         statusPanel.setMinimumSize(new java.awt.Dimension(1440, 30));
         statusPanel.setPreferredSize(new java.awt.Dimension(1440, 30));
+        statusPanel.setLayout(new java.awt.BorderLayout());
 
         statusOutlet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         statusOutlet.setText("Status");
         statusOutlet.setFocusable(false);
         statusOutlet.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         statusOutlet.setRequestFocusEnabled(false);
-
-        javax.swing.GroupLayout statusPanelLayout = new javax.swing.GroupLayout(statusPanel);
-        statusPanel.setLayout(statusPanelLayout);
-        statusPanelLayout.setHorizontalGroup(
-            statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1442, Short.MAX_VALUE)
-            .addGroup(statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(statusOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, 1440, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        statusPanelLayout.setVerticalGroup(
-            statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-            .addGroup(statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(statusOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        statusPanel.add(statusOutlet, java.awt.BorderLayout.CENTER);
 
         masterSplit.setTopComponent(statusPanel);
 
-        gamePanel.setDividerLocation(150);
-        gamePanel.setDividerSize(2);
-        gamePanel.setEnabled(false);
-        gamePanel.setFocusable(false);
-        gamePanel.setPreferredSize(new java.awt.Dimension(1440, 800));
-        gamePanel.setRequestFocusEnabled(false);
-
         mainSplit.setBorder(null);
-        mainSplit.setDividerLocation(600);
+        mainSplit.setDividerLocation(570);
         mainSplit.setDividerSize(2);
         mainSplit.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         mainSplit.setResizeWeight(1.0);
         mainSplit.setEnabled(false);
         mainSplit.setFocusable(false);
+        mainSplit.setPreferredSize(new java.awt.Dimension(2, 770));
         mainSplit.setRequestFocusEnabled(false);
 
-        handOutlet.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-        mainSplit.setBottomComponent(handOutlet);
-        mainSplit.setTopComponent(tableOutlet);
+        tableOutlet.setBackground(new java.awt.Color(255, 255, 204));
+        tableOutlet.setPreferredSize(new java.awt.Dimension(0, 570));
+        tableOutlet.setLayout(new java.awt.BorderLayout());
+        mainSplit.setLeftComponent(tableOutlet);
 
-        gamePanel.setRightComponent(mainSplit);
-
-        sidePanel.setEnabled(false);
-        sidePanel.setFocusable(false);
-        sidePanel.setMaximumSize(new java.awt.Dimension(150, 32767));
-        sidePanel.setMinimumSize(new java.awt.Dimension(150, 0));
-        sidePanel.setPreferredSize(new java.awt.Dimension(150, 800));
-        sidePanel.setLayout(new java.awt.BorderLayout());
+        playerOutlet.setMaximumSize(new java.awt.Dimension(32767, 200));
+        playerOutlet.setMinimumSize(new java.awt.Dimension(2, 200));
+        playerOutlet.setPreferredSize(new java.awt.Dimension(1000, 200));
+        playerOutlet.setLayout(new java.awt.BorderLayout());
 
         cardsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        cardsPanel.setMaximumSize(new java.awt.Dimension(150, 300));
-        cardsPanel.setMinimumSize(new java.awt.Dimension(150, 300));
-        cardsPanel.setPreferredSize(new java.awt.Dimension(150, 300));
-        cardsPanel.setLayout(new java.awt.GridBagLayout());
+        cardsPanel.setEnabled(false);
+        cardsPanel.setFocusable(false);
+        cardsPanel.setMaximumSize(new java.awt.Dimension(240, 200));
+        cardsPanel.setMinimumSize(new java.awt.Dimension(240, 200));
+        cardsPanel.setPreferredSize(new java.awt.Dimension(240, 200));
+        cardsPanel.setRequestFocusEnabled(false);
+        cardsPanel.setLayout(new java.awt.BorderLayout());
+
+        jPanel1.setEnabled(false);
+        jPanel1.setFocusable(false);
+        jPanel1.setMinimumSize(new java.awt.Dimension(50, 200));
+        jPanel1.setPreferredSize(new java.awt.Dimension(50, 200));
+        jPanel1.setRequestFocusEnabled(false);
+        jPanel1.setLayout(new java.awt.GridLayout(2, 1));
 
         graveyardOutlet.setText("Gy");
-        graveyardOutlet.setPreferredSize(new java.awt.Dimension(60, 60));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 5);
-        cardsPanel.add(graveyardOutlet, gridBagConstraints);
+        graveyardOutlet.setMaximumSize(new java.awt.Dimension(50, 50));
+        graveyardOutlet.setMinimumSize(new java.awt.Dimension(50, 50));
+        graveyardOutlet.setPreferredSize(new java.awt.Dimension(50, 50));
+        graveyardOutlet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graveyardOutletActionPerformed(evt);
+            }
+        });
+        jPanel1.add(graveyardOutlet);
 
         removedFromTheGameOutlet.setText("RftG");
-        removedFromTheGameOutlet.setPreferredSize(new java.awt.Dimension(60, 60));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
-        cardsPanel.add(removedFromTheGameOutlet, gridBagConstraints);
+        removedFromTheGameOutlet.setMaximumSize(new java.awt.Dimension(50, 50));
+        removedFromTheGameOutlet.setMinimumSize(new java.awt.Dimension(50, 50));
+        removedFromTheGameOutlet.setPreferredSize(new java.awt.Dimension(50, 50));
+        removedFromTheGameOutlet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removedFromTheGameOutletActionPerformed(evt);
+            }
+        });
+        jPanel1.add(removedFromTheGameOutlet);
 
-        deckOutlet.setPreferredSize(new java.awt.Dimension(130, 200));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        cardsPanel.add(deckOutlet, gridBagConstraints);
+        cardsPanel.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        sidePanel.add(cardsPanel, java.awt.BorderLayout.PAGE_END);
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Deck", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        jPanel2.setPreferredSize(new java.awt.Dimension(140, 200));
+        jPanel2.setLayout(new java.awt.BorderLayout());
 
-        playersSplit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        playersSplit.setDividerLocation(125);
-        playersSplit.setDividerSize(1);
-        playersSplit.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
-        playersSplit.setResizeWeight(0.5);
-        playersSplit.setEnabled(false);
-        playersSplit.setFocusable(false);
-        playersSplit.setMaximumSize(new java.awt.Dimension(150, 2454578));
-        playersSplit.setMinimumSize(new java.awt.Dimension(150, 0));
-        playersSplit.setPreferredSize(new java.awt.Dimension(150, 250));
-        playersSplit.setRequestFocusEnabled(false);
+        deckOutlet.setPreferredSize(new java.awt.Dimension(130, 182));
+        deckOutlet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deckOutletActionPerformed(evt);
+            }
+        });
+        jPanel2.add(deckOutlet, java.awt.BorderLayout.CENTER);
 
-        vsPanel.setFocusable(false);
-        vsPanel.setMaximumSize(new java.awt.Dimension(150, 32767));
-        vsPanel.setMinimumSize(new java.awt.Dimension(150, 0));
-        vsPanel.setPreferredSize(new java.awt.Dimension(150, 125));
+        cardsPanel.add(jPanel2, java.awt.BorderLayout.LINE_END);
 
-        vsNameOutlet.setText("Enemy");
+        playerOutlet.add(cardsPanel, java.awt.BorderLayout.LINE_START);
 
-        javax.swing.GroupLayout vsPanelLayout = new javax.swing.GroupLayout(vsPanel);
-        vsPanel.setLayout(vsPanelLayout);
-        vsPanelLayout.setHorizontalGroup(
-            vsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(vsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(vsNameOutlet)
-                .addContainerGap(106, Short.MAX_VALUE))
-        );
-        vsPanelLayout.setVerticalGroup(
-            vsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(vsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(vsNameOutlet)
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
+        handOutlet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        handOutlet.setMinimumSize(new java.awt.Dimension(800, 200));
+        handOutlet.setPreferredSize(new java.awt.Dimension(800, 200));
+        handOutlet.setLayout(new java.awt.BorderLayout());
+        playerOutlet.add(handOutlet, java.awt.BorderLayout.CENTER);
 
-        playersSplit.setTopComponent(vsPanel);
+        resolvedCardOutlet.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resolved card", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        resolvedCardOutlet.setMaximumSize(new java.awt.Dimension(142, 200));
+        resolvedCardOutlet.setMinimumSize(new java.awt.Dimension(142, 200));
+        resolvedCardOutlet.setPreferredSize(new java.awt.Dimension(142, 200));
+        resolvedCardOutlet.setLayout(new java.awt.BorderLayout());
 
-        playerPanel.setFocusable(false);
-        playerPanel.setMaximumSize(new java.awt.Dimension(150, 4578787));
-        playerPanel.setMinimumSize(new java.awt.Dimension(150, 0));
-        playerPanel.setPreferredSize(new java.awt.Dimension(150, 125));
+        resolvedCard.setPreferredSize(new java.awt.Dimension(130, 182));
+        resolvedCardOutlet.add(resolvedCard, java.awt.BorderLayout.CENTER);
 
-        playerNameOutlet.setText("Player");
+        playerOutlet.add(resolvedCardOutlet, java.awt.BorderLayout.LINE_END);
 
-        javax.swing.GroupLayout playerPanelLayout = new javax.swing.GroupLayout(playerPanel);
-        playerPanel.setLayout(playerPanelLayout);
-        playerPanelLayout.setHorizontalGroup(
-            playerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(playerPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(playerNameOutlet)
-                .addContainerGap(108, Short.MAX_VALUE))
-        );
-        playerPanelLayout.setVerticalGroup(
-            playerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(playerPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(playerNameOutlet)
-                .addContainerGap(116, Short.MAX_VALUE))
-        );
+        mainSplit.setBottomComponent(playerOutlet);
 
-        playersSplit.setRightComponent(playerPanel);
-
-        sidePanel.add(playersSplit, java.awt.BorderLayout.CENTER);
-
-        previewPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        previewPanel.setEnabled(false);
-        previewPanel.setFocusable(false);
-        previewPanel.setMaximumSize(new java.awt.Dimension(150, 2147483647));
-        previewPanel.setMinimumSize(new java.awt.Dimension(150, 0));
-        previewPanel.setPreferredSize(new java.awt.Dimension(150, 200));
-        previewPanel.setRequestFocusEnabled(false);
-        previewPanel.setLayout(new java.awt.BorderLayout());
-
-        previewOutlet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        previewOutlet.setBorder(javax.swing.BorderFactory.createTitledBorder("Preview"));
-        previewOutlet.setPreferredSize(new java.awt.Dimension(130, 182));
-        previewPanel.add(previewOutlet, java.awt.BorderLayout.CENTER);
-
-        sidePanel.add(previewPanel, java.awt.BorderLayout.PAGE_START);
-
-        gamePanel.setLeftComponent(sidePanel);
-
-        masterSplit.setBottomComponent(gamePanel);
+        masterSplit.setBottomComponent(mainSplit);
 
         add(masterSplit, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void graveyardOutletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graveyardOutletActionPerformed
+	
+    }//GEN-LAST:event_graveyardOutletActionPerformed
+
+    /**
+     * Draw a card when left clicking on the deck
+     * 
+     * @param evt 
+     */
+    private void deckOutletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deckOutletActionPerformed
+	drawCard(1);
+    }//GEN-LAST:event_deckOutletActionPerformed
+
+    private void drawCard(int amount) {
+	for (int i = 0; i < amount; i++) {
+	    CardController drawn = deck.drawCard();
+	    if (drawn != null) {
+		// add the preview mouse listener to the card upon drawing it and add it to the handcontroller
+		handController.addCard(drawn);
+	    } else {
+		// DECK IS EMPTY
+		JOptionPane.showMessageDialog(new JFrame(), "Your deck is empty!", "Can't draw card", JOptionPane.ERROR_MESSAGE);
+		break;
+	    }
+	}
+    }
+    
+    public void prepareAttachingOfCard(CardController toAttach){
+	tableController.prepareAttachingOfCard(toAttach);
+    }
+
+    private void removedFromTheGameOutletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removedFromTheGameOutletActionPerformed
+	setStatusMessage(new Date().toString());
+    }//GEN-LAST:event_removedFromTheGameOutletActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardsPanel;
     private javax.swing.JButton deckOutlet;
-    private javax.swing.JSplitPane gamePanel;
     private javax.swing.JButton graveyardOutlet;
     private javax.swing.JPanel handOutlet;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane mainSplit;
     private javax.swing.JSplitPane masterSplit;
-    private javax.swing.JLabel playerNameOutlet;
-    private javax.swing.JPanel playerPanel;
-    private javax.swing.JSplitPane playersSplit;
-    private javax.swing.JLabel previewOutlet;
-    private javax.swing.JPanel previewPanel;
+    private javax.swing.JPanel playerOutlet;
     private javax.swing.JButton removedFromTheGameOutlet;
-    private javax.swing.JPanel sidePanel;
+    private javax.swing.JButton resolvedCard;
+    private javax.swing.JPanel resolvedCardOutlet;
     private javax.swing.JSplitPane sideSplit;
     private javax.swing.JLabel statusOutlet;
     private javax.swing.JPanel statusPanel;
-    private javax.swing.JLayeredPane tableOutlet;
-    private javax.swing.JLabel vsNameOutlet;
-    private javax.swing.JPanel vsPanel;
+    private javax.swing.JPanel tableOutlet;
     // End of variables declaration//GEN-END:variables
     
     private final JMenu sessionMenu;
     
     private MainFrame parent;
     
-    private ArrayList<String> hand;
-    private ArrayList<String> graveyard;
     private ArrayList<String> removedftgame;
     // drag from hand:
     private boolean draggingFromHand = false;
@@ -378,7 +377,6 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
     private String draggingFromHandCardName = null;
     private CardPanel draggingFromHandCardPanel = null;
     private boolean draggingFromHandCardPanelShown = false;
-    private Deck deck;
     private boolean dragging = false;
     private CardPanel draggedCard;
     private static final int GRIDX = 20, GRIDY = 20;
@@ -559,7 +557,7 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		    //System.out.println("STUB :: Moving card to graveyard");
-		    moveCardToGraveyardFromPlay(clickedCard);
+//		    moveCardToGraveyardFromPlay(clickedCard);
 		}
 	    });
 
@@ -672,7 +670,7 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	    System.out.println("should delete");
 	    
 	    // ctrl+click -> card to graveyard
-	    moveCardToGraveyardFromPlay(clickedCard);
+//	    moveCardToGraveyardFromPlay(clickedCard);
 	} 
     }
 
@@ -711,7 +709,7 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	    // find card and register it as drag card
 	    draggedCard = (CardPanel) c;
 
-	    System.out.println("Clicked on card " + draggedCard.getCardName() + " on layer " + tableOutlet.getLayer(c));
+//	    System.out.println("Clicked on card " + draggedCard.getCardName() + " on layer " + tableOutlet.getLayer(c));
 
 	    // pick up card
 	    draggedCard.setLocation(compLoc);
@@ -756,7 +754,7 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	    // add card to its previous layer
 	    tableOutlet.add(draggedCard, new Integer(JLayeredPane.PALETTE_LAYER + cards.indexOf(draggedCard)));
 
-	    System.out.println("Released card " + draggedCard.getCardName() + " on layer " + tableOutlet.getLayer(draggedCard));
+//	    System.out.println("Released card " + draggedCard.getCardName() + " on layer " + tableOutlet.getLayer(draggedCard));
 
 	    // broadcast this!!
 	   
@@ -815,7 +813,7 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 //	this.connection = conn;
 
 	// put hero card into play
-	spawnCard(deck.getHero());
+//	spawnCard(deck.getHero());
 	
 //	startGame(ONLINE);
     }
@@ -841,46 +839,6 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	}
 
 	tableOutlet.validate();
-    }
-
-    private void drawCard(int amount) {
-	for (int i = 0; i < amount; i++) {
-	    Card drawn = deck.drawCard();
-	    if (drawn != null) {
-		hand.add(drawn.getName());
-	    } else {
-		// DECK IS EMPTY
-		JOptionPane.showMessageDialog(new JFrame(), "Your deck is empty!", "Can't draw card", JOptionPane.ERROR_MESSAGE);
-		break;
-	    }
-//	    sendMessage("drawing a card");
-	}
-
-//	leftList.setListData(hand.toArray(new String[0]));
-    }
-
-    private void playCardFromHand(String cardName) {
-//	Card card = model.generateCardByName(model.getCardByName(cardName).getType(), cardName);
-//
-//	if (card != null) {
-//	    CardPanel cardPanel = new CardPanel(card, cards.size());
-//	    cardPanel.setBounds(40, 40, 60, 60);
-//
-//	    addToPlay(cardPanel);
-//
-////	    if (state == ONLINE) {
-////		//send gui update
-////		connection.sendGUIMessage(cardPanel);
-////	    }
-////	    sendMessage("playing " + card.getName().toUpperCase() + " from HAND");
-//
-//	    // remove card from hand
-//	    hand.remove(cardName);
-//	}
-//
-//	leftList.setListData(hand.toArray(new String[0]));
-//	leftList.clearSelection();
-//	leftList.validate();
     }
 
     private void spawnCard(String cardName) {
@@ -941,22 +899,8 @@ public class SessionController extends javax.swing.JPanel implements MouseListen
 	tableOutlet.remove(cardPanel);
 
 	cardPanel.setVisible(false);
-	hand.add(cardPanel.getCard().getName());
+//	hand.add(cardPanel.getCard().getName());
 //	leftList.setListData(hand.toArray(new String[0]));
-
-	tableOutlet.validate();
-	tableOutlet.repaint();
-    }
-
-    private void moveCardToGraveyardFromPlay(CardPanel cardPanel) {
-	cardPanel.setVisible(false);
-	
-	cards.remove(cardPanel);
-	tableOutlet.remove(cardPanel);
-
-	
-	// add to top
-	graveyard.add(0, cardPanel.getCard().getName());
 
 	tableOutlet.validate();
 	tableOutlet.repaint();

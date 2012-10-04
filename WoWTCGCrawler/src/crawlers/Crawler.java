@@ -4,6 +4,7 @@
  */
 package crawlers;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,7 +15,7 @@ import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -24,6 +25,7 @@ public class Crawler implements Runnable {
 
     private static final String CARD_DELIMITER = "::";
     private static final String FIELD_DELIMITER = ";;";
+    private static final String IMAGE_DELIMITER = "onmouseover=\"return overlib('', BACKGROUND, '";
     public static final int NONE = 0;
     public static final int CRAWL = 1;
     public static final int PARSE = 2;
@@ -31,9 +33,11 @@ public class Crawler implements Runnable {
     private String BASE_URL = "http://www.wowtcgdb.com/";
     private String SECTION_URL;
     private String EXTENSION = ".aspx";
+    private String IMAGES = "images/";
+    private String IMG_FORMAT = "png";
     private int type;
     private boolean recording = false;
-    private boolean logging = false;
+    private boolean logging = true;
 
     public Crawler(String section, int type) {
 	this.SECTION_URL = section;
@@ -68,28 +72,50 @@ public class Crawler implements Runnable {
 	    URL url = new URL(link);
 	    BufferedReader din = new BufferedReader(new InputStreamReader(new BufferedInputStream(url.openStream())));
 
+	    System.out.println("Downloaded page source for \""+ SECTION_URL+"\".");
+	    
 	    String s;
 	    int i = 0;
+	    int imgCount = 0;
 	    while ((s = din.readLine()) != null) {
-		if (s.contains("<table width=\"900\">")) {
+		// each tr of a card has background color #F7F7DE, so start reading from there
+		if (s.contains("#F7F7DE")) {
+		    if(!recording && logging) System.out.println("Turning ON recording for \""+SECTION_URL+"\".");
 		    recording = true;
+		}
+		
+		// stop recording at the end of the data table
+		if (recording && s.contains("</table>")){
+		    recording = false;
+		    if(logging) System.out.println("Turning OFF recording for \""+SECTION_URL+"\".");
 		}
 
 		if (recording) {
+		    if (s.contains("onmouseover=\"return overlib('', BACKGROUND, ")) {
+			// download image
+			String start = "BACKGROUND, '";
+			String imgPath = s.substring(s.indexOf(start)+start.length(), s.indexOf("'", s.indexOf(start)+start.length()));
+			URL imgURL = new URL(BASE_URL+"/"+imgPath);
+			BufferedImage img = ImageIO.read(imgURL);
+			String imgName = imgPath.substring(imgPath.lastIndexOf("/")+1, imgPath.lastIndexOf("."));
+			ImageIO.write(img, IMG_FORMAT, new File(IMAGES+imgName+"."+IMG_FORMAT));
+			imgCount++;
+			if(logging)System.out.println("Downloaded image \""+imgName+"\"!");
+		    }
 		    out.println(s);
 		}
 
 		if (logging) {
 		    i++;
 		    if (i % 25 == 0) {
-			System.out.println("Scanned " + i + " lines");
+			System.out.println("Scanned " + i + " lines (saved "+imgCount+" images)");
 		    }
 		}
 	    }
 	    out.flush();
 	    out.close();
 
-	    System.out.println("Crawler of section \"" + SECTION_URL + "\" finished!");
+	    System.out.println("Crawler of section \"" + SECTION_URL + "\" finished!\n**************************************************");
 
 
 	} catch (MalformedURLException ex) {
@@ -126,13 +152,13 @@ public class Crawler implements Runnable {
 	    PrintWriter out = new PrintWriter("Data_" + SECTION_URL + ".txt");
 
 	    if (SECTION_URL.equalsIgnoreCase("type-hero")) {
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String race;
 		    String clazz;
@@ -148,7 +174,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    // ---------
@@ -253,13 +282,13 @@ public class Crawler implements Runnable {
 		}
 
 	    } else if (SECTION_URL.equalsIgnoreCase("type-ally")) {
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String race;
 		    String clazz;
@@ -278,7 +307,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -361,13 +393,13 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-quest")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String faction;
 		    String rules;
@@ -379,7 +411,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -419,13 +454,14 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-ability")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+//		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String supertype;
 		    String subtype;
@@ -443,7 +479,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -517,13 +556,13 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-weapon")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String supertype; // go to race
 		    String subtype;
@@ -542,7 +581,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -617,13 +659,13 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-armor")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String subtype;
 		    String tags;
@@ -639,7 +681,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -699,13 +744,13 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-armorset")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String subtype;
 		    String tags;
@@ -721,7 +766,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -781,13 +829,13 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-item")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
 //		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String tags;
 		    String restriction;
@@ -801,7 +849,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));
@@ -851,13 +902,13 @@ public class Crawler implements Runnable {
 		    data = data.substring(data.indexOf("</tr>") + 5);
 		}
 	    } else if (SECTION_URL.equalsIgnoreCase("type-location")){
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("width=\"900\">") + 12);
 //		data = data.substring(data.indexOf("width=\"900\">") + 12);
-		data = data.substring(data.indexOf("/tr>") + 4);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("width=\"900\">") + 12);
+//		data = data.substring(data.indexOf("/tr>") + 4);
 
 		// every card is a row in the table
-		while (data.contains("<tr") && data.indexOf("</table>") > data.indexOf("<tr")) {
+		while (data.contains("<tr")) {
 		    String name;
 		    String rules;
 		    int nr;
@@ -868,7 +919,10 @@ public class Crawler implements Runnable {
 		    cardBuilder.append(CARD_DELIMITER);
 
 		    // skip image
+		    data = data.substring(data.indexOf(IMAGE_DELIMITER)+IMAGE_DELIMITER.length());
+		    String img = data.substring(data.indexOf("medium/")+7, data.indexOf(".jpg"));
 		    data = data.substring(data.indexOf("/td>") + 4);
+		    cardBuilder.append(img).append(FIELD_DELIMITER);
 
 		    // read name
 		    data = data.substring(data.indexOf("<a"));

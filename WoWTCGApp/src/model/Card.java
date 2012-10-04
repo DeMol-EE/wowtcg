@@ -5,10 +5,12 @@
 package model;
 
 import images.ImageLoader;
-import java.awt.Image;
 import java.awt.Point;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.ImageIcon;
+import viewControllers.CardController;
 
 /**
  *
@@ -18,6 +20,9 @@ public abstract class Card implements Serializable {
     private boolean exhausted;
     private boolean flipped;
     private int counters;
+    
+    private final HashMap<String, CardController> attachedCardsMap = new HashMap<String, CardController>();
+    private CardController parent = null;
     
 //    private ImageIcon icon;
     private String iconURL;
@@ -40,8 +45,13 @@ public abstract class Card implements Serializable {
     private String rules;
     private String talent;
     private String professions;
+    
+    private CardController controller;
 
-    public Card(String iconURL, String name, String type, String subtype, String race, String clazz, String tags, String faction, String restriction, String cost, int atk, String atktype, int health, int nr, char rarity, String set, String rules, String talent, String professions) {
+    public Card(String iconURL, String name, String type, String subtype, String race, String clazz, String tags, String faction, String restriction, String cost, int atk, String atktype, int health, int nr, char rarity, String set, String rules, String talent, String professions, CardController controller) {
+	
+	this.controller = controller;
+	
 	this.iconURL = iconURL;
 	this.name = name;
 	this.type = type;
@@ -67,7 +77,12 @@ public abstract class Card implements Serializable {
 	this.counters = 0;
     }
     
+    public Card(String iconURL, String name, String type, String subtype, String race, String clazz, String tags, String faction, String restriction, String cost, int atk, String atktype, int health, int nr, char rarity, String set, String rules, String talent, String professions) {
+	this(iconURL, name, type, subtype, race, clazz, tags, faction, restriction, cost, atk, atktype, health, nr, rarity, set, rules, talent, professions, null);
+    }
+    
     public Card(Card cloneMe){
+	this.controller = cloneMe.controller();
 	this.iconURL = cloneMe.getIconURL();
 	this.name = cloneMe.getName();
 	this.type = cloneMe.getType();
@@ -92,6 +107,51 @@ public abstract class Card implements Serializable {
 	this.flipped = false;
 	this.counters = 0;
     }
+    
+    public CardController parent(){
+	return parent;
+    }
+    
+    public void setParent(CardController parent){
+	this.parent = parent;
+    }
+    
+    public CardController controller(){
+	return controller;
+    }
+    
+    public void registerController(CardController controller){
+	this.controller = controller;
+    }
+    
+    public void setController(CardController controller){
+	registerController(controller);
+    }
+    
+    public ArrayList<CardController> attachedCards(){
+	return new ArrayList<CardController>(attachedCardsMap.values());
+    }
+    
+    public void attachCard(CardController toAttach){
+	attachedCardsMap.put(toAttach.GUID(), toAttach);
+	toAttach.setParent(controller);
+	
+	// update controller
+	controller.updateAttachments();
+    }
+    
+    public void removeAttachedCard(String GUID){
+	if(attachedCardsMap.containsKey(GUID)) attachedCardsMap.remove(GUID);
+	if(parent!=null)parent.removeAttachedCard(GUID);
+	
+	// update controller
+	controller.updateAttachments();
+    }
+    
+    public void removeAttachedCard(CardController toRemove){
+	System.out.println("Card:: removeAttachedCard - Uhm...");
+//	if(attachedCardsMap.containsValue(toRemove)) attachedCardsMap.remove(toRemove);
+    }
 
     public String getName() {
 	return name;
@@ -102,12 +162,14 @@ public abstract class Card implements Serializable {
     }
     
     public ImageIcon getIcon(){
-	ImageIcon icon = ImageLoader.createImageIconAtHomeLocation(getIconURL());
-	return new ImageIcon(icon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+//	ImageIcon icon = ImageLoader.createImageIconAtHomeLocation(getIconURL());
+//	return new ImageIcon(icon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+//	return ImageLoader.createImageIconAtHomeLocationWithDefault(getIconURL(), "template.png");
+	return flipped ? ImageLoader.createImageIconAtHomeLocation("template.png") : ImageLoader.createImageIconWithDefaultAtHomeLocation(getIconURL(), "png", "template.png");
     }
 
     public String getIconURL() {
-	return iconURL;
+	return flipped ? "template.png" : iconURL;
     }
 
     public void setIconURL(String iconURL) {
@@ -281,10 +343,14 @@ public abstract class Card implements Serializable {
 
     public void setFlipped(boolean flipped) {
 	this.flipped = flipped;
+	
+	if (controller!=null) controller.updateIcon();
     }
     
     public void toggleFlipped(){
 	this.flipped = !this.flipped;
+	
+	if (controller!=null) controller.updateIcon();
     }
     
     public CardSnapshot takeSnapshot(){

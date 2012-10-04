@@ -1,0 +1,546 @@
+    <table width="900">
+    <!--
+        <tr><td align="center"><img src="http://www.wowtcgdb.com/images/banner900.jpg" alt="WoWTCGdb"/></td></tr>
+        <tr><td align="center"><a href="default.aspx" class="navbar">Home</a> | <a href="cards.aspx" class="navbar">Cards</a> | <a href="decks.aspx" class="navbar">Decks</a> | <a href="strategy.aspx" class="navbar">Strategy</a> | <a href="loot.aspx" class="navbar">Loot</a> |  <a href="links.aspx" class="navbar">Links</a> | <a href="creator.aspx" class="navbar">Creator</a></td></tr>
+        <tr><td><hr size="1"/></td></tr>
+        -->
+        <tr><td>
+<img src="images/banner3.jpg" width="900" height="30" border="0" usemap="#Map"> 
+<map name="Map">
+  <area shape="rect" coords="0,0,419,24" href="http://www.wowtcgdb.com" alt="WoWTCGdb">
+  <area shape="rect" coords="420,0,474,23" href="cards.aspx" alt="Cards">
+  <area shape="rect" coords="478,0,545,22" href="set-promos.aspx" alt="Promos">
+  <area shape="rect" coords="550,0,594,23" href="loot.aspx" alt="Loot">
+  <area shape="rect" coords="599,0,653,23" href="decks.aspx" alt="Decks">
+  <area shape="rect" coords="656,0,707,23" href="rules.aspx" alt="Rules">
+  <area shape="rect" coords="711,0,762,23" href="links.aspx" alt="Links">
+  <area shape="rect" coords="766,0,833,23" href="creator.aspx" alt="Creator">
+</map>
+        </td></tr>
+        <tr><td align="center">
+            <p><a href="type-all.aspx" class="navbar">Show All</a> | <a href="type-hero.aspx" class="navbar">Hero</a> 
+            | <a href="type-ally.aspx" class="navbar">Ally</a> | <a href="type-quest.aspx" class="navbar">Quest</a> 
+            | <a href="type-ability.aspx" class="navbar">Ability</a> | <a href="type-weapon.aspx" class="navbar">Weapon</a> 
+            | <a href="type-armor.aspx" class="navbar">Armor</a> | <a href="type-armorset.aspx" class="navbar">Armor Set</a> | <a href="type-item.aspx" class="navbar">Item</a>  | <a href="type-location.aspx" class="navbar">Location</a> | <a href="type-masterhero.aspx" class="navbar">Master Hero</a> 
+          </p>
+        </td></tr>
+    </table>
+    
+        
+
+<div>
+	<table cellspacing="0" cellpadding="4" rules="cols" bordercolor="#DEDFDE" border="1" id="ctl00_body_GridView1" bgcolor="White" width="900">
+		<tr bgcolor="#6B696B">
+			<th scope="col"><font color="White"><b>&nbsp;</b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$name')"><font color="White">Name</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$keywords')"><font color="White">Tags</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$allowedclass')"><font color="White">Class Restriction</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$costsort')"><font color="White">Cost</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$rules')"><font color="White">Rules</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$number')"><font color="White">#</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$raritysort')"><font color="White">Rarity</font></a></b></font></th><th scope="col"><font color="White"><b><a href="javascript:__doPostBack('ctl00$body$GridView1','Sort$setname')"><font color="White">Set</font></a></b></font></th>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/gigantique_bag.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3171">"Gigantique" Bag</a></font></td><td><font color="Black">Bag (5)</font></td><td><font color="Black">All</font></td><td><font color="Black">4</font></td><td><font color="Black">You have no maximum hand size.<br><img src="images/icon-exhaust.gif">, Pay 1 for each card in your hand <img src="images/icon-arrow.gif"> Draw a card.</font></td><td><font color="Black">180</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/abacus_of_violent_odds.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1108">Abacus of Violent Odds</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">When your hero attacks, roll a die.<br>If it's even, remove your hero from combat.<br>If it's odd, ready your hero and all of your weapons at the end of this combat.</font></td><td><font color="Black">208</font></td><td><font color="Black">E</font></td><td><font color="Black">FoO</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/adals_signet_of_defense.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1491">A'dal's Signet of Defense</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Paladin, Warrior</font></td><td><font color="Black">1</font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target armor has +3 DEF this turn.</font></td><td><font color="Black">8</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/alchemists_stone.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1815">Alchemist's Stone</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black"><b>Alchemy Hero Required</b><br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Reveal the top card of your deck. You may discard a card with a different type. If you do, put that revealed card into hand.</font></td><td><font color="Black">11</font></td><td><font color="Black">E</font></td><td><font color="Black">CRP</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ancient_cornerstone_grimoire.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=400">Ancient Cornerstone Grimoire</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage, Priest, Warlock</font></td><td><font color="Black">4</font></td><td><font color="Black">2, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Put a Skeleton ally token with 1 ATK, 1 health, ferocity, and protector into play. At end of turn, destroy it.</font></td><td><font color="Black">20</font></td><td><font color="Black">R</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/arcanite_dragonling.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2146">Arcanite Dragonling</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black">1 <img src="images/icon-arrow.gif"/> Arcanite Dragonling is also an ally with 2 [Melee] ATK / 2 health and <b>protector</b> this turn.</font></td><td><font color="Black">216</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/band_of_channeled_magic.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2886">Band of Channeled Magic</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black">At the start of your turn, you may pay 2. If you do, draw a card. Otherwise, destroy this item.</font></td><td><font color="Black">1</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/band_of_crimson_fury.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1478">Band of Crimson Fury</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">3, Discard a card <img src="images/icon-arrow.gif"> The next time damage would be dealt with an ability you control this turn, that much +3 is dealt instead.</font></td><td><font color="Black">9</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/band_of_sulfuras.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=814">Band of Sulfuras</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">If a friendly hero or ally would deal damage to an Elemental, it deals that much damage +1 instead.</font></td><td><font color="Black">11</font></td><td><font color="Black">R</font></td><td><font color="Black">MCT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/band_of_the_inevitable.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1826">Band of the Inevitable</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Paladin, Shaman</font></td><td><font color="Black">2</font></td><td><font color="Black">X, Destroy Band of the Inevitable <img src="images/icon-arrow.gif"> Destroy each equipment with cost X or less. Use only on your turn.</font></td><td><font color="Black">218</font></td><td><font color="Black">R</font></td><td><font color="Black">HfI</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/band_of_the_ranger_general.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1109">Band of the Ranger-General</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">You pay 1 less to strike with weapons for each weapon you have.</font></td><td><font color="Black">209</font></td><td><font color="Black">R</font></td><td><font color="Black">FoO</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/band_of_vile_aggression.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2572">Band of Vile Aggression</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Hunter, Rogue</font></td><td><font color="Black">2</font></td><td><font color="Black">5, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"/> Destroy target resource.</font></td><td><font color="Black">168</font></td><td><font color="Black">R</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/bandits_insignia.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3127">Bandit's Insignia</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Rogue</font></td><td><font color="Black">4</font></td><td><font color="Black">On your turn: <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target opponent puts a card from his hand into his resource row face down and exhausted.</font></td><td><font color="Black">22</font></td><td><font color="Black">R</font></td><td><font color="Black">NAXT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/bangle_of_endless_blessings.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2754">Bangle of Endless Blessings</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">12</font></td><td><font color="Black">When Bangle of Endless Blessings enters play, put each face-down resource into its owner's hand.<br>Players can't place resources face down.</font></td><td><font color="Black">165</font></td><td><font color="Black">R</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/barov_peasant_caller.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=385">Barov Peasant Caller</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">2, <img src="images/icon-exhaust.gif">, Destroy Barov Peasant Caller <img src="images/icon-arrow.gif">  Put three Peasant ally tokens with 1 ATK, 1 health, and ferocity into play. At end of turn, destroy them.</font></td><td><font color="Black">304</font></td><td><font color="Black">R</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/bladefists_breadth.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1455">Bladefist's Breadth</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">When you play a weapon, ready your hero.</font></td><td><font color="Black">270</font></td><td><font color="Black">U</font></td><td><font color="Black">MoL</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/blessed_medallion_of_karabor.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2081">Blessed Medallion of Karabor</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">All</font></td><td><font color="Black">8</font></td><td><font color="Black">Remove Blessed Medallion of Karabor from the game <img src="images/icon-arrow.gif"/> Move to the right of another friendly player. Use only on your turn.</font></td><td><font color="Black">3</font></td><td><font color="Black">R</font></td><td><font color="Black">BTT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/bloodlust_brooch.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2070">Bloodlust Brooch</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Hunter, Rogue, Shaman, Warrior</font></td><td><font color="Black">6</font></td><td><font color="Black">When your hero deals combat damage, put that many Fanatic ally tokens into play with 1 [Melee] ATK / health.</font></td><td><font color="Black">1</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/burst_of_knowledge.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1110">Burst of Knowledge</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black">1, Put Burst of Knowledge into its owner's hand <img src="images/icon-arrow.gif"> You pay 2 less to play your next card this turn.</font></td><td><font color="Black">210</font></td><td><font color="Black">R</font></td><td><font color="Black">FoO</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/choker_of_fluid_thought.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1111">Choker of Fluid Thought</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">4</font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Reveal the top card of target player's deck. You may remove that card from the game.</font></td><td><font color="Black">211</font></td><td><font color="Black">R</font></td><td><font color="Black">FoO</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/choker_of_vile_intent.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1775">Choker of Vile Intent</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">At the start of your turn, you may destroy an ability, ally, or equipment you control. If you do, each opponent destroys a card of that kind he controls.</font></td><td><font color="Black">229</font></td><td><font color="Black">R</font></td><td><font color="Black">SoB</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/darkmoon_card_madness.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2062">Darkmoon Card: Madness</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">4</font></td><td><font color="Black">On your turn: 2, <img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> Remove the top card of target opponent's deck from the game. If it's an ability, ally, or equipment card, he destroys a card of that kind he controls.</font></td><td><font color="Black">4</font></td><td><font color="Black">R</font></td><td><font color="Black">DMF</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/dragonflight_great_ring.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2878">Dragonflight Great-Ring</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Death Knight, Druid, Paladin, Warrior</font></td><td><font color="Black">13</font></td><td><font color="Black">At the start of your turn, destroy target hero.</font></td><td><font color="Black">228</font></td><td><font color="Black">E</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/dragonslayers_signet.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=401">Dragonslayer's Signet</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">If a friendly hero or ally would deal damage to a Dragon or Dragonkin, it deals that amount of damage plus 1 instead.</font></td><td><font color="Black">21</font></td><td><font color="Black">R</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/dying_curse.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3128">Dying Curse</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Priest, Warlock</font></td><td><font color="Black">1</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Destroy target attachment. If you do, its controller draws a card.</font></td><td><font color="Black">23</font></td><td><font color="Black">R</font></td><td><font color="Black">NAXT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/elemental_focus_band.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1112">Elemental Focus Band</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">4</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif">, Discard an ability card <img src="images/icon-arrow.gif"> Your hero deals 2 fire damage to target hero or ally.</font></td><td><font color="Black">212</font></td><td><font color="Black">R</font></td><td><font color="Black">FoO</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/eskhandars_collar.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=121">Eskhandar's Collar</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">2</font></td><td><font color="Black">Your hero has +1 ATK while in combat with an opposing hero.<br>Opposing heroes have -1 ATK while in combat with your hero.</font></td><td><font color="Black">22</font></td><td><font color="Black">R</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/essence_of_the_martyr.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2071">Essence of the Martyr</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Paladin, Priest, Shaman</font></td><td><font color="Black">3</font></td><td><font color="Black">When an ally in your party is destroyed, you may remove it from the game. If you do, Essence of the Martyr becomes a copy of that ally with this power, and you remove all damage from it.</font></td><td><font color="Black">2</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/extract_of_necromantic_power.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2940">Extract of Necromantic Power</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Death Knight, Warlock</font></td><td><font color="Black">1</font></td><td><font color="Black">As each turn starts,<br>[Warlock] Hero: Prevent the next 3 melee ([Melee]) damage that would be dealt to your hero this turn.<br>[Death Knight] Hero: Prevent the next 3 non-melee damage that would be dealt to your hero this turn.</font></td><td><font color="Black">229</font></td><td><font color="Black">R</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/eye_of_magtheridon.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1494">Eye of Magtheridon</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">1</font></td><td><font color="Black">If 1 would be rolled on a die, you may change it to any value on that die instead.</font></td><td><font color="Black">10</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/flare_of_the_heavens.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3476">Flare of the Heavens</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Hunter, Mage</font></td><td><font color="Black">2</font></td><td><font color="Black"><b>[Hunter] Hero:</b> At the start of your turn, you may look at the top card of an opponent's deck. You may put it into his graveyard.<br><b>[Mage] Hero:</b> At the start of your turn, you may look at the top card of your deck. You may put it into your graveyard.</font></td><td><font color="Black">179</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/freezing_band.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1456">Freezing Band</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Mage, Priest, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">Each opponent can't draw more than one card per turn.</font></td><td><font color="Black">271</font></td><td><font color="Black">E</font></td><td><font color="Black">MoL</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/frostbridge_orb.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3470">Frostbridge Orb</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage</font></td><td><font color="Black">0</font></td><td><font color="Black"><b>[Druid] Hero:</b> Cards you control with <b>Mend</b> have an additional <b>Mend 1</b>.<br><b>[Mage] Hero:</b> Cards you control with <b>Assault</b> have an additional <b>Assault 1</b>.</font></td><td><font color="Black">180</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/frostweave_bandage.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3511">Frostweave Bandage</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black">1, Destroy this item <img src="images/icon-arrow.gif"> Your hero heals 4 damage from target hero or ally.<br><b>Death Rattle:</b> Target hero or ally has <b>Frost Resistance</b> this turn.</font></td><td><font color="Black">181</font></td><td><font color="Black">U</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/frostwolf_insignia.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2748">Frostwolf Insignia</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">When you play a card, add an honor counter. If there are six or more on Frostwolf Insignia, destroy it.<br>When Frostwolf Insignia is destroyed this way, your hero heals 10 damage from target hero or ally.</font></td><td><font color="Black">168</font></td><td><font color="Black">U</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/gingerbread_cookie.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1157">Gingerbread Cookie</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">Destroy Gingerbread Cookie <img src="images/icon-arrow.gif"> Each hero heals 7 damage from itself.</font></td><td><font color="Black">7</font></td><td><font color="Black">R</font></td><td><font color="Black">FWV</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/glacial_bag.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3456">Glacial Bag</a></font></td><td><font color="Black">Bag (5)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">Exhaust a Bag you control <img src="images/icon-arrow.gif"> Add a thaw counter.<br><img src="images/icon-exhaust.gif">, Remove four thaw counters <img src="images/icon-arrow.gif"> Draw three cards.</font></td><td><font color="Black">182</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/gnomeregan_auto_blocker_600.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2072">Gnomeregan Auto-Blocker 600</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Paladin, Shaman, Warrior</font></td><td><font color="Black">4</font></td><td><font color="Black">At the end of your turn, put a Blocker ally token into play with 0 [Melee] ATK / 1 health and <b>protector</b>.</font></td><td><font color="Black">3</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/goblin_rocket_launcher.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2416">Goblin Rocket Launcher</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">4</font></td><td><font color="Black"><b>Engineering Hero Required</b><br><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif">Remove the top card of your deck from the game. Your hero deals ranged damage equal to that card's cost to target ally.</font></td><td><font color="Black">3</font></td><td><font color="Black">E</font></td><td><font color="Black">CRP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/hearthstone.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=288">Hearthstone</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">6</font></td><td><font color="Black">6, <img src="images/icon-exhaust.gif">, Concede the game <img src="images/icon-arrow.gif"> Players can keep any of their equipment and start the next game with those cards in play.</font></td><td><font color="Black">305</font></td><td><font color="Black">E</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/heavy_netherweave_bandage.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1496">Heavy Netherweave Bandage</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">1, Put Heavy Netherweave Bandage on the bottom of its owners deck <img src="images/icon-arrow.gif"> Your hero heals 6 damage from target hero or ally. Use only on your turn.</font></td><td><font color="Black">11</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/hourglass_of_the_unraveller.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1776">Hourglass of the Unraveller</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Hunter, Paladin, Rogue, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">You pay 1 less to play equipment, to a minimum of 1.</font></td><td><font color="Black">230</font></td><td><font color="Black">R</font></td><td><font color="Black">SoB</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/icon_of_the_silver_crescent.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2073">Icon of the Silver Crescent</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Priest, Warlock</font></td><td><font color="Black">4</font></td><td><font color="Black">If a non-token ally in your party would be destroyed, attach it to a hero instead. That ally loses all powers and becomes an ability with "At the start of your turn, your hero deals 1 fire damage to attached hero."</font></td><td><font color="Black">4</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/icy_blast_amulet.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3129">Icy Blast Amulet</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Death Knight, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">2</font></td><td><font color="Black">When your hero is dealt damage on an opponent's turn, you may pay 1. If you do, it deals 1 frost damage to target hero or ally.</font></td><td><font color="Black">24</font></td><td><font color="Black">R</font></td><td><font color="Black">NAXT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/idol_of_the_shooting_star.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3181">Idol of the Shooting Star</a></font></td><td><font color="Black">Relic (1)</font></td><td><font color="Black">Druid</font></td><td><font color="Black">1</font></td><td><font color="Black">2, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Your hero heals 2 damage from target hero or ally.<br>When you play an ally, ready this item.</font></td><td><font color="Black">181</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/jindos_bag_of_whammies.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=659">Jin'do's Bag of Whammies</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage, Priest, Warlock</font></td><td><font color="Black">6</font></td><td><font color="Black">Each player's maximum hand size is reduced by four.<br>At the start of each player's turn, that player draws cards until he reaches his maximum hand size.</font></td><td><font color="Black">263</font></td><td><font color="Black">R</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/jindos_evil_eye.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=540">Jin'do's Evil Eye</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Paladin, Priest, Shaman</font></td><td><font color="Black">4</font></td><td><font color="Black">At the start of each player's turn, the first opponent to that player's left names a card. That card can't be played this turn.</font></td><td><font color="Black">264</font></td><td><font color="Black">R</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/karaborian_talisman.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1481">Karaborian Talisman</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">1</font></td><td><font color="Black">When you complete a quest, you may destroy Karaborian Talisman. If you do, turn that quest face up.</font></td><td><font color="Black">12</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/khorium_boar.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3148">Khorium Boar</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Death Knight, Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">1</font></td><td><font color="Black"><b>Jewelcrafting Hero Required</b><br>Weapons you control have +1 ATK.<br><b>Death Rattle</b>: Put a 1 [Melee] / 1 [Health] Bear ally token into play.</font></td><td><font color="Black">3</font></td><td><font color="Black">E</font></td><td><font color="Black">CRP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/lei_of_lilies.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=108">Lei of Lilies</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">4</font></td><td><font color="Black">At the start of your turn, if you have four or more cards in your hand, your hero heals 1 damage from itself.<br>1, Destroy Lei of Lilies <img src="images/icon-arrow.gif"> Your hero heals 1 damage from itself for each card in your hand.</font></td><td><font color="Black">306</font></td><td><font color="Black">E</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/libram_of_radiance.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3352">Libram of Radiance</a></font></td><td><font color="Black">Relic (1)</font></td><td><font color="Black">Paladin</font></td><td><font color="Black">2</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Your hero deals 1 unpreventable holy damage to target hero or ally.<br>When you play a [Paladin] armor, ready this item.</font></td><td><font color="Black">182</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/life_binders_locket.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3353">Life-Binder's Locket</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Paladin, Priest</font></td><td><font color="Black">2</font></td><td><font color="Black">[Paladin] <b>Hero: </b><img src="images/icon-exhaust.gif">, Discard a card <img src="images/icon-arrow.gif"> If a friendly hero or ally would be dealt damage this turn, prevent 1 of it.<br>[Priest] <b>Hero: </b><img src="images/icon-exhaust.gif">, Discard a card <img src="images/icon-arrow.gif"> The next time target hero or ally would be dealt damage this turn, prevent it.</font></td><td><font color="Black">183</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/lightwardens_band.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1807">Lightwarden's Band</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Hunter, Paladin, Rogue, Warrior</font></td><td><font color="Black">2</font></td><td><font color="Black"><b>Aldor Reputation</b><br>Your hero has "<b>Inspire:</b> Ability, ally, equipment, hero, or resource."</font></td><td><font color="Black">219</font></td><td><font color="Black">R</font></td><td><font color="Black">HfI</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/magnificent_flying_carpet.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3385">Magnificent Flying Carpet</a></font></td><td><font color="Black">Mount (1)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black"><b>Tailoring Hero Required</b><br>You can control any number of locations.<br>When you place a resource face up, you may ready all locations you control.</font></td><td><font color="Black">3</font></td><td><font color="Black">E</font></td><td><font color="Black">CRP</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/major_healing_potion.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=675">Major Healing Potion</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black">1, Destroy Major Healing Potion <img src="images/icon-arrow.gif"> Your hero heals 5 damage from itself.</font></td><td><font color="Black">265</font></td><td><font color="Black">U</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/masons_fraternity_ring.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=230">Masons Fraternity Ring</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">Your hero has +1 ATK while attacking.</font></td><td><font color="Black">307</font></td><td><font color="Black">U</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/medallion_of_the_alliance.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2183">Medallion of the Alliance</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">1, Put Medallion of the Alliance on the bottom of your deck <img src="images/icon-arrow.gif"/> Interrupt target ability card that's targeting your hero if it was played by a [Horde] player. <br><i>(This item can prevent damage like an armor.)</i></font></td><td><font color="Black">219</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/medallion_of_the_horde.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2184">Medallion of the Horde</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">1, Put Medallion of the Horde on the bottom of your deck <img src="images/icon-arrow.gif"/> Interrupt target ability card that's targeting your hero if it was played by an [Alliance] player.<br><i>(This item can prevent damage like an armor.)</i></font></td><td><font color="Black">220</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/medallion_of_the_lightbearer.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1880">Medallion of the Lightbearer</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black"><b>Aldor Reputation</b><br>Heroes and allies in your party with <b>inspire</b> are also <b>protectors</b>.</font></td><td><font color="Black">220</font></td><td><font color="Black">U</font></td><td><font color="Black">HfI</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/memento_of_tyrande.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2082">Memento of Tyrande</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">When a non-token ally is destroyed, its controller may put a Spirit ally token into play wit 1 [Holy] ATK / 1 health.</font></td><td><font color="Black">4</font></td><td><font color="Black">R</font></td><td><font color="Black">BTT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/mighty_shadow_protection_potion.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2856">Mighty Shadow Protection Potion</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">Death Knight, Druid, Hunter, Mage, Rogue, Shaman, Warrior</font></td><td><font color="Black">1</font></td><td><font color="Black">Destroy this item <img src="images/icon-arrow.gif"> Target friendly hero or ally has <b>Shadow Resistance</b> this turn. <i>(Prevent all shadow ([Shadow]) damage that it would be dealt.)</i></font></td><td><font color="Black">230</font></td><td><font color="Black">C</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/mistletoe.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1151">Mistletoe</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">You and another friendly player each exhaust your heroes <img src="images/icon-arrow.gif"> You and that player each draw a card.</font></td><td><font color="Black">8</font></td><td><font color="Black">R</font></td><td><font color="Black">FWV</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/myrmidons_signet.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=131">Myrmidon's Signet</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">Your hero has +5 health.</font></td><td><font color="Black">308</font></td><td><font color="Black">U</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/naaru_lightwardens_band.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1498">Naaru Lightwarden's Band</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Paladin, Priest, Shaman</font></td><td><font color="Black">4</font></td><td><font color="Black">Friendly heroes have +5 health.</font></td><td><font color="Black">13</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/noggenfogger_elixir.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=37">Noggenfogger Elixir</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">Destroy Noggenfogger Elixir <img src="images/icon-arrow.gif"> Choose an ally in your party and roll a die. <br>1-2: That ally can't be destroyed this turn. <br>3-4: Ready that ally. <br>5-6: That ally can't be attacked this turn.</font></td><td><font color="Black">309</font></td><td><font color="Black">R</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/onyxia_blood_talisman.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=402">Onyxia Blood Talisman</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Paladin, Shaman, Warrior</font></td><td><font color="Black">6</font></td><td><font color="Black">Friendly allies have +2 health.</font></td><td><font color="Black">23</font></td><td><font color="Black">E</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/onyxia_hide_backpack.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=120">Onyxia Hide Backpack</a></font></td><td><font color="Black">Bag (5)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black"><img src="images/icon-exhaust.gif">, Discard an equipment card <img src="images/icon-arrow.gif"> Draw a card.</font></td><td><font color="Black">24</font></td><td><font color="Black">U</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/onyxia_tooth_pendant.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=403">Onyxia Tooth Pendant</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">6</font></td><td><font color="Black">Friendly allies have +2 ATK while attacking.</font></td><td><font color="Black">25</font></td><td><font color="Black">E</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/oracle_talisman_of_ablution.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2939">Oracle Talisman of Ablution</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black">Allies you control that share a class with your hero have <b>Assault 1</b>.</font></td><td><font color="Black">227</font></td><td><font color="Black">U</font></td><td><font color="Black">SW</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/penelopes_rose.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=548">Penelope's Rose</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage, Priest, Warlock</font></td><td><font color="Black">4</font></td><td><font color="Black">When you complete a quest, draw a card.</font></td><td><font color="Black">266</font></td><td><font color="Black">U</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/phoenix_fire_band.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1499">Phoenix-fire Band</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">1, Destroy Phoenix-fire Band <img src="images/icon-arrow.gif"> Prevent all fire damage tht would be dealt to target hero or ally this turn.</font></td><td><font color="Black">14</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/piccolo_of_the_flaming_fire.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=386">Piccolo of the Flaming Fire</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Exhaust all heroes and allies. Use only on your turn.</font></td><td><font color="Black">310</font></td><td><font color="Black">R</font></td><td><font color="Black">HoA</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/pinata.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2607">Pinata</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">Friendly allies can attack Pinata as though it were an opposing ally. When Pinata defends, destroy it. If you do, draw two cards.</font></td><td><font color="Black">166</font></td><td><font color="Black">R</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/platinum_disks_of_swiftness.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3165">Platinium Disks of Swiftness</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> You pay 1 less to play your nest ally that shares a class with your hero this turn.</font></td><td><font color="Black">184</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/portal_stone.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3399">Portal Stone</a></font></td><td><font color="Black">Hearthstone (1)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">On your turn: 1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Remove target ally you control from the game.<br>On your turn: 1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Put an ally removed by the card named Portal Stone into play under your control.</font></td><td><font color="Black">183</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/quagmirrans_eye.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1777">Quagmirran's Eye</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">You pay 1 less to play abilities, to a minimum of 1.</font></td><td><font color="Black">231</font></td><td><font color="Black">R</font></td><td><font color="Black">SoB</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ramsteins_lightning_bolts.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=779">Ramstein's Lightning Bolts</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">2, Destroy Ramstein's Lightning Bolts <img src="images/icon-arrow.gif"> Your hero deals 1 nature damage to each hero and ally.</font></td><td><font color="Black">267</font></td><td><font color="Black">U</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/renewal_of_life.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2887">Renewal of Life</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Paladin, Priest, Shaman</font></td><td><font color="Black">4</font></td><td><font color="Black">At the start of your turn, you may destroy this item. If you do, each player puts all allies from his graveyard into play.</font></td><td><font color="Black">2</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_binding.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=404">Ring of Binding</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">Opponents pay 1 more to play abilities that target your hero.</font></td><td><font color="Black">26</font></td><td><font color="Black">R</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_flowing_light.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1261">Ring of Flowing Light</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Paladin, Priest, Shaman</font></td><td><font color="Black">1</font></td><td><font color="Black"><img src="images/icon-exhaust.gif">, Exhaust X of your equipment <img src="images/icon-arrow.gif"> Your hero heals X damage from itself.</font></td><td><font color="Black">272</font></td><td><font color="Black">U</font></td><td><font color="Black">MoL</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_invincibility.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2888">Ring of Invincibility</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Death Knight, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">3</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Target ally has <b>Invincible</b> this turn. <i>(It can't leave play, be targeted, or be dealt damage.)</i></font></td><td><font color="Black">3</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_the_recalcitrant.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1500">Ring of the Recalcitrant</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Hunter, Rogue, Warrior</font></td><td><font color="Black">4</font></td><td><font color="Black">Friendly heroes have +1 ATK while attacking.</font></td><td><font color="Black">15</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_the_shadow_deeps.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1778">Ring of the Shadow Deeps</a></font></td><td><font color="Black">Finger (2)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">1</font></td><td><font color="Black"><img src="images/icon-exhaust.gif">, Destory an ally in your party <img src="images/icon-arrow.gif"> Your hero has +2 ATK while attacking this turn.</font></td><td><font color="Black">232</font></td><td><font color="Black">U</font></td><td><font color="Black">SoB</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_the_silver_hand.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1779">Ring of the Silver Hand</a></font></td><td><font color="Black">Finger (2)</font></td><td><font color="Black">Druid, Paladin, Shaman</font></td><td><font color="Black">3</font></td><td><font color="Black"><img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Prevent all combat damage that target attacking ally would deal to your hero this combat.</font></td><td><font color="Black">233</font></td><td><font color="Black">R</font></td><td><font color="Black">SoB</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/ring_of_the_unliving.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=549">Ring of the Unliving</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">4</font></td><td><font color="Black">Your hero can't be destroyed.<br>While your hero has fatal damage on it, when it's dealt damage, destroy that many of your equipment and/or resources.</font></td><td><font color="Black">268</font></td><td><font color="Black">E</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/rune_of_metamorphosis.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2196">Rune of Metamorphosis</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid</font></td><td><font color="Black">1</font></td><td><font color="Black">Your Forms aren't destroyed by abilities you play. <i>(You can still have only one card with Form(1) in play.)</i></font></td><td><font color="Black">217</font></td><td><font color="Black">U</font></td><td><font color="Black">DoW</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/scryers_bloodgem.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1949">Scryer's Bloodgem</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black"><b>Scryer Reputation</b><br>Heroes and allies in your party with <b>sabotage</b> also have <b>stealth</b></font></td><td><font color="Black">221</font></td><td><font color="Black">U</font></td><td><font color="Black">HfI</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_seal_of_danzalar.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2456">Seal of Danzalar, The</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">At the start of your turn, your hero deals shadow damage to target hero equal to the number of cards in your hand minus the number of cards in that hero's controller's hand.</font></td><td><font color="Black">169</font></td><td><font color="Black">R</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/seers_signet.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1804">Seer's Signet</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">6</font></td><td><font color="Black"><b>Scryer Reputation</b><br>Your hero has "<b>Sabotage:</b> Ability or equipment."<br>When your hero sabotages a card, destroy it.</font></td><td><font color="Black">222</font></td><td><font color="Black">R</font></td><td><font color="Black">HfI</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/shard_of_the_flame.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=815">Shard of the Flame</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">4</font></td><td><font color="Black">When a resource enters play under your control, your hero heals 2 damage from itself.</font></td><td><font color="Black">12</font></td><td><font color="Black">R</font></td><td><font color="Black">MCT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/shard_of_the_scale.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=405">Shard of the Scale</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Hunter, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black">2, Destroy Shard of the Scale <img src="images/icon-arrow.gif"> Put the top card of your deck into your resource row face down and exhausted.</font></td><td><font color="Black">27</font></td><td><font color="Black">U</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/sigil_of_the_vengeful_heart.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3471">Sigil of the Vengeful Heart</a></font></td><td><font color="Black">Relic (1)</font></td><td><font color="Black">Death Knight</font></td><td><font color="Black">2</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif"> <img src="images/icon-arrow.gif"> Ready target Ghoul.<br>When you play a weapon, ready this item.</font></td><td><font color="Black">184</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/signet_of_manifested_pain.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3130">Signet of Manifested Pain</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Druid, Mage, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black">At the start of your turn, you may put 2 damage on your hero. If you do, put a 2 [Melee] / 2 [Health] ally token into play with the same class and race as your hero.</font></td><td><font color="Black">25</font></td><td><font color="Black">R</font></td><td><font color="Black">NAXT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/signet_of_the_impregnable_fortress.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2889">Signet of the Impregnable Fortress</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Death Knight, Druid, Paladin, Warrior</font></td><td><font color="Black">5</font></td><td><font color="Black">Heroes and allies you control have <b>Protector</b>.<br>Each opposing hero and ally has -2 ATK on its controller's turn.</font></td><td><font color="Black">4</font></td><td><font color="Black">E</font></td><td><font color="Black">BoJ</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/skibis_pendant.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=406">Skibi's Pendant</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">Druid, Hunter, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">2</font></td><td><font color="Black">You pay 1 less to strike with weapons.</font></td><td><font color="Black">28</font></td><td><font color="Black">R</font></td><td><font color="Black">OLT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/the_skull_of_guldan.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2083">Skull of Gul'dan, The</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black"><img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> You pay 2 less the next time you pay a cost with X in it this turn.</font></td><td><font color="Black">5</font></td><td><font color="Black">R</font></td><td><font color="Black">BTT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/soul_of_the_dead.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3487">Soul of the Dead</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Death Knight, Priest</font></td><td><font color="Black">2</font></td><td><font color="Black">Youre hero has +1 [Health] for each soul counter.<br><b>[Death Knight] Hero:</b> Opposing allies everywhere have "<b>Death Rattle:</b> Add a soul counter to this item."<br><b>[Priest] Hero:</b> Opposing abilities everywhere have "<b>Death Rattle:</b> Add a soul counter to this item."</font></td><td><font color="Black">185</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/statue_generator.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3354">Statue Generator</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">When this item enters play, remove target ally from the game. If you do, add three marble counters, and that ally's owner puts it into play under his control when this item leaves play.<br>At the start of your turn, remove a marble counter. If none remain, destroy this item.</font></td><td><font color="Black">185</font></td><td><font color="Black">R</font></td><td><font color="Black">WG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/stormpike_insignia.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2622">Stormpike Insignia</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">2</font></td><td><font color="Black">When you play a card, add an honor counter. If there are six or more on Stormpike Insignia, destroy it.<br>When Stormpike Insignia is destroyed this way, your hero deals 5 frost damage to target hero or ally.</font></td><td><font color="Black">167</font></td><td><font color="Black">U</font></td><td><font color="Black">FoH</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/stormrage_signet_ring.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2084">Stormrage Signet Ring</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Paladin, Rogue, Shaman, Warrior</font></td><td><font color="Black">4</font></td><td><font color="Black">2, <img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> Put target equipment into its owner's hand. Use only on your turn.</font></td><td><font color="Black">6</font></td><td><font color="Black">R</font></td><td><font color="Black">BTT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/strong_handed_ring.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3131">Strong-Handed Ring</a></font></td><td><font color="Black">Ring (2)</font></td><td><font color="Black">Death Knight, Hunter, Paladin, Rogue, Warrior</font></td><td><font color="Black">5</font></td><td><font color="Black">Your hero has <b>Assault 5</b> while you have five or more cards in your hand.</font></td><td><font color="Black">26</font></td><td><font color="Black">R</font></td><td><font color="Black">NAXT</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/super_mana_potion.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1502">Super Mana Potion</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">Druid, Hunter, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">5</font></td><td><font color="Black">4, Destroy Super Mana Potion <img src="images/icon-arrow.gif"> Draw four cards.</font></td><td><font color="Black">16</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/super_simian_sphere.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3472">Super Simian Sphere</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Hunter, Warlock</font></td><td><font color="Black">1</font></td><td><font color="Black"><b>[Hunter] Hero:</b> Your hero has Pet (1).<br><b>[Warlock] Hero:</b> Your hero is also a Demon.</font></td><td><font color="Black">186</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/superior_mana_oil.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1480">Superior Mana Oil</a></font></td><td><font color="Black">&nbsp;</font></td><td><font color="Black">Druid, Hunter, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">1</font></td><td><font color="Black">Superior Mana Oil enters play attached to one of your weapons.<br>At the start of your turn, you may reveal the top card of your deck. If it's an ability card, put it into your hand. Otherwise, put it into your graveyard.</font></td><td><font color="Black">17</font></td><td><font color="Black">R</font></td><td><font color="Black">MLT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/talasite_owl.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2058">Talasite Owl</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Hunter, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black"><b>Jewelcrafting Hero Required</b><br><img src="images/icon-exhaust.gif"/> <img src="images/icon-arrow.gif"/> Put a hoot counter on Talasite Owl.<br><img src="images/icon-exhaust.gif"/>, Remove X hoot counters, destroy Talasite Owl <img src="images/icon-arrow.gif"/> Ready X of your resources.</font></td><td><font color="Black">14</font></td><td><font color="Black">E</font></td><td><font color="Black">CRP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/talisman_of_ephemeral_power.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=816">Talisman of Ephemeral Power</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black">When you play an ability, you may pay 1 and put Talisman of Ephemeral Power into its owner's hand. If you do and your hero would deal damage with that ability this turn, it deals that much damage +1 instead.</font></td><td><font color="Black">13</font></td><td><font color="Black">R</font></td><td><font color="Black">MCT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/talisman_of_the_alliance.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2459">Talisman of the Alliance</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black"><img src="images/icon-exhaust.gif">, Destroy Talisman of the Alliance <img src="images/icon-arrow.gif"/> Destroy all abilities and equipment that have or share the lowest cost among abilities and equipment in play.</font></td><td><font color="Black">170</font></td><td><font color="Black">U</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/talisman_of_the_horde.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2460">Talisman of the Horde</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black"><img src="images/icon-exhaust.gif">, Destroy Talisman of the Horde <img src="images/icon-arrow.gif"/> Destroy all abilities and equipment that have or share the highest cost among abilities and equipment in play.</font></td><td><font color="Black">171</font></td><td><font color="Black">U</font></td><td><font color="Black">BoG</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/titan_forged_rune_of_cruelty.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3489">Titan-forged Rune of Cruelty</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">All</font></td><td><font color="Black">3</font></td><td><font color="Black">At the start of your turn, each hero deals melee damage to itself equal to the number of cards in its controller's hand.</font></td><td><font color="Black">187</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/totem_of_splintering.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3457">Totem of Splintering</a></font></td><td><font color="Black">Relic (1)</font></td><td><font color="Black">Shaman</font></td><td><font color="Black">2</font></td><td><font color="Black">1, <img src="images/icon-exhaust.gif">, Destroy a Totem you control <img src="images/icon-arrow.gif"> Your hero deals nature damage equal to that Totem's cost to target hero or ally.<br>When you play a Totem, ready this item.</font></td><td><font color="Black">188</font></td><td><font color="Black">R</font></td><td><font color="Black">ICE</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/trance_stone.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=731">Trance Stone</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage, Priest, Warlock</font></td><td><font color="Black">3</font></td><td><font color="Black">At the end of your turn, if you didn't place a resource this turn, draw a card.</font></td><td><font color="Black">269</font></td><td><font color="Black">U</font></td><td><font color="Black">TDP</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/urn_of_lost_memories.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=3132">Urn of Lost Memories</a></font></td><td><font color="Black">Off-Hand (1)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">2</font></td><td><font color="Black">On your turn: <img src="images/icon-exhaust.gif">, Destroy an ability or equipment you control with cost X <img src="images/icon-arrow.gif"> Put target ally with cost X or less from your graveyard into play.</font></td><td><font color="Black">27</font></td><td><font color="Black">R</font></td><td><font color="Black">NAXT</font></td>
+		</tr><tr bgcolor="#F7F7DE">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/vengeance_of_the_illidari.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=1457">Vengeance of the Illidari</a></font></td><td><font color="Black">Trinket (2)</font></td><td><font color="Black">Druid, Mage, Paladin, Priest, Shaman, Warlock</font></td><td><font color="Black">5</font></td><td><font color="Black">When you play an ability, ready your hero.</font></td><td><font color="Black">273</font></td><td><font color="Black">U</font></td><td><font color="Black">MoL</font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="Black">
+<a href="javascript:void(0);" onmouseover="return overlib('', BACKGROUND, 'images/medium/veterans_pendant.jpg',WIDTH,220,HEIGHT,308 );" onmouseout="return nd();"><img src='images/cardback_small.gif' border='0'/></a>
+            </font></td><td><font color="Black"><a href="carddetail.aspx?id=2205">Veteran's Pendant</a></font></td><td><font color="Black">Neck (1)</font></td><td><font color="Black">All</font></td><td><font color="Black">1</font></td><td><font color="Black">If you win this game, you decide who goes first next game.</font></td><td><font color="Black">218</font></td><td><font color="Black">R</font></td><td><font color="Black">DoW</font></td>
+		</tr>
+	</table>
+</div>
+        
+
+        
+<table width="900">
+  <tr><td align="center">
+
+<hr size="1" />
+<script type="text/javascript"><!--
+google_ad_client = "pub-7634380918769478";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "6728B2";
+google_color_bg = "FFFFFF";
+google_color_link = "6131BD";
+google_color_text = "000000";
+google_color_url = "CC0000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td></tr>
+<tr><td>	  <hr size="1"/>
+
+	  <p class="legal">wowtcgdb.com is entirely fan-based. No one from Blizzard Entertainment or The Upper Deck Company participated in the construction of this site. This site is not made by or endorsed by Blizzard Entertainment or The Upper Deck Company. This site is done in good will to help promote and share information about the World of Warcraft Trading Card Game. Warcraft, World of Warcraft and Blizzard Entertainment are trademarks and/or registered trademarks of Blizzard Entertainment, Inc., in the U.S. and/or other countries. We hold no legal rights to anything offered on this site. This site, or sections of it, will be removed upon inquiry of copyright owner(s). Contact: <a href="mailto:wowtcgdb@gmail.com">wowtcgdb@gmail.com</a></p></td></tr>
+	  <tr><td align="center">
+	  
+	  
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1776897; 
+var sc_invisible=0; 
+var sc_partition=16; 
+var sc_security="7353a105"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c17.statcounter.com/counter.php?sc_project=1776897&amp;java=0&amp;security=7353a105&amp;invisible=0" alt="free web stats" border="0"/></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1098482-1";
+urchinTracker();
+</script>
+	  </td></tr>
+</table>        
+    </div><br><br><br><br><br><br><br>
+    </form>
+</body>
+</html>

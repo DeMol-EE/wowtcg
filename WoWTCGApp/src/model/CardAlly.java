@@ -13,8 +13,8 @@ import viewControllers.CardAllyFrame;
  */
 public class CardAlly extends Card {
 
-    public CardAlly(String atkType, String name, String race, String clazz, String tags, String faction, String cost, int atk, int health, int nr, char rarity, String set, String rules) {
-	super("template.png", name, "Ally", "", race, clazz, tags, faction, "", cost, atk, atkType, health, nr, rarity, set, rules, "", "");
+    public CardAlly(String imgPath, String atkType, String name, String race, String clazz, String tags, String faction, String cost, int atk, int health, int nr, char rarity, String set, String rules) {
+	super(imgPath, name, "Ally", "", race, clazz, tags, faction, "", cost, atk, atkType, health, nr, rarity, set, rules, "", "");
     }
 
     public CardAlly(Card cloneMe) {

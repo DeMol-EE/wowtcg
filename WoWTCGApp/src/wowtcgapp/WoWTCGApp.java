@@ -61,11 +61,14 @@ public class WoWTCGApp {
     }
     
     public static void doTheLoading(){
+	// load user data
+	final UserData ud = new UserData();
+	
 	// start model
-	final Model m = new Model();
+	final Model m = new Model(ud);
 	
 	// some delay to show the pretty loading screen :3
-//	/*
+	/*
 	for (int i = 0; i < 100000; i++) {
 	    System.out.println("i="+i);
 	    if(i==7000){
@@ -128,8 +131,12 @@ public class WoWTCGApp {
 	}
 	//*/
 	
-	// load user data
-	final UserData ud = new UserData(m);
+	java.awt.EventQueue.invokeLater(new Runnable() {
+	    @Override
+	    public void run() {
+		loading.setLoading(100, "Finished loading!");
+	    }
+	});
 	
 	// start GUI
 	java.awt.EventQueue.invokeLater(new Runnable() {

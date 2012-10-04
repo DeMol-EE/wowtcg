@@ -13,8 +13,8 @@ import viewControllers.CardItemFrame;
  */
 public class CardItem extends Card {
 
-    public CardItem(String name, String tags, String restriction, String cost, int nr, char rarity, String set, String rules) {
-	super("template.png", name, "Item", "", "", "", tags, "", restriction, cost, 0, "", 0, nr, rarity, set, rules, "", "");
+    public CardItem(String imgPath, String name, String tags, String restriction, String cost, int nr, char rarity, String set, String rules) {
+	super(imgPath, name, "Item", "", "", "", tags, "", restriction, cost, 0, "", 0, nr, rarity, set, rules, "", "");
     }
 
     public CardItem(Card cloneMe) {

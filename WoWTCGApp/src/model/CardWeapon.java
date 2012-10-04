@@ -13,8 +13,8 @@ import viewControllers.CardWeaponFrame;
  */
 public class CardWeapon extends Card {
 
-    public CardWeapon(String name, String supertype, String subtype, String tags, String restriction, String cost, int strikeCost, String rules, int atk, String atktype, int nr, char rarity, String set) {
-	super("template.png", name, "Weapon", subtype, supertype, "", tags, "", restriction, cost, atk, atktype, strikeCost, nr, rarity, set, rules, "", "");
+    public CardWeapon(String imgPath, String name, String supertype, String subtype, String tags, String restriction, String cost, int strikeCost, String rules, int atk, String atktype, int nr, char rarity, String set) {
+	super(imgPath, name, "Weapon", subtype, supertype, "", tags, "", restriction, cost, atk, atktype, strikeCost, nr, rarity, set, rules, "", "");
     }
     
     public CardWeapon(Card cloneMe) {

@@ -9,5 +9,6 @@ package model;
  * @author Robin jr
  */
 public class Session {
-    
+    private Deck deck;
+//    private 
 }
