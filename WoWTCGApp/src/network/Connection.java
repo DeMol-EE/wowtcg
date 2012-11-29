@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import viewControllers.MainFrame;
+import viewControllers.menu.MainFrame;
 
 /**
  * Make this as a thread to allow it to block on send without making the UI hang

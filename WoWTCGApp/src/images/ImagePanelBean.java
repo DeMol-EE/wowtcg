@@ -19,6 +19,7 @@ public class ImagePanelBean extends JPanel implements Serializable {
 
     public ImagePanelBean() {
 	setSize(new Dimension(1440, 880));
+	setPreferredSize(new Dimension(1440, 880));
 	setLayout(null);
     }
     
@@ -28,7 +29,7 @@ public class ImagePanelBean extends JPanel implements Serializable {
 
     public void setBackgroundImage(ImageIcon backgroundImage) {
 //	System.out.println("Setting bg image ("+backgroundImage+") with size "+getSize());
-	this.backgroundImage = ImageLoader.scaleImage(backgroundImage, getSize());
+	this.backgroundImage = ImageLoader.scaleImage(backgroundImage, getPreferredSize());
 	this.repaint();
     }
 

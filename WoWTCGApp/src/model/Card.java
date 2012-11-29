@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
-import viewControllers.CardController;
+import viewControllers.session.CardController;
 
 /**
  *

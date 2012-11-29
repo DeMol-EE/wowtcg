@@ -6,8 +6,8 @@ package wowtcgapp;
 
 import model.Model;
 import model.UserData;
-import viewControllers.LoadingScreen;
-import viewControllers.MainFrame;
+import viewControllers.menu.LoadingScreen;
+import viewControllers.menu.MainFrame;
 
 /**
  *

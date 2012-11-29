@@ -7,7 +7,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import viewControllers.CardController;
+import viewControllers.session.CardController;
 
 /**
  *

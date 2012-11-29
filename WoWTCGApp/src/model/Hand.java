@@ -5,8 +5,8 @@
 package model;
 
 import java.util.ArrayList;
-import viewControllers.CardController;
-import viewControllers.HandController;
+import viewControllers.session.CardController;
+import viewControllers.session.HandController;
 
 /**
  *

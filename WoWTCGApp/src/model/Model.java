@@ -18,11 +18,21 @@ import java.util.Random;
 import java.util.TreeMap;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import viewControllers.CardController;
+import viewControllers.session.CardController;
+import wowtcgcrawler.WoWTCGCrawler;
 
 /**
  * Offers dynamic access to the files downloaded by the webcrawler.
  * Oh pointers, how I would love you right now...
+ * 
+ * The model eagerly loaded, the images are lazily loaded and loosely
+ * coupled to the individual cards using card_ids as references to the
+ * images, that share the same name as the card they are from.
+ * The images are maintained by the ImageLoader class, which caches
+ * the images for faster access.
+ * 
+ * Alternatively, all images could be loaded simultaneously and this could
+ * be done in a SwingWorker thread.
  *
  * @author Warkst
  */
@@ -85,6 +95,21 @@ public class Model {
 	    System.out.println("Model::JOptionPane closed with choice "+choice);
 	    if(choice == 0){
 		System.out.println("Model::DOWNLOAD DATA - show file chooser to choose download directory");
+		int fcChoice;
+		do {
+		    fcChoice = fc.showOpenDialog(null);
+		    if(fcChoice == JFileChooser.CANCEL_OPTION){
+			System.exit(0);
+		    }
+		} while(fcChoice != JFileChooser.APPROVE_OPTION);
+		
+		// accepted
+		dataPath = fc.getSelectedFile().getPath()+File.separator;
+		if (WoWTCGCrawler.downloadAndParseAllData(dataPath)) {
+		    
+		} else {
+		    
+		}
 	    } else if (choice == 1) {
 		int fcChoice;
 		do {

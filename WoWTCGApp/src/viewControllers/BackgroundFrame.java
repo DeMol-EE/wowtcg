@@ -10,6 +10,7 @@
  */
 package viewControllers;
 
+import viewControllers.menu.MainFrame;
 import images.ImageLoader;
 import java.awt.Image;
 import javax.swing.ImageIcon;
